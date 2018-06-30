@@ -59,7 +59,7 @@ btnLima.addEventListener("click", () => {
 		})
 		.catch(error =>
 			console.error('Error: Nat algo haces mal', error));
-	document.getElementById('contenido').style.display = "none";
+	document.getElementById('sedes').style.display = "none";
 	document.getElementById('selectCenters').style.display = "block";
 })
 cohortsSelect.addEventListener("change", (e) => {
@@ -80,7 +80,7 @@ cohortsSelect.addEventListener("change", (e) => {
 			let usersWithStats = processCohortData(options);
 			usersWithStats.forEach((user) => {
 				celda += '<tr id="cuerpoData">' +
-					'<td>' + user.name + '</td>' +
+					'<td>' + user.name.toUpperCase()+ '</td>' +
 					'<td>' + user.stats.percent + '</td>' +
 					'<td>' + user.stats.exercises.percent + '</td>' +
 					'<td>' + user.stats.reads.percent + '</td>' +
@@ -120,7 +120,7 @@ selectOrderBy.addEventListener("change", () => {
 			usersWithStats.forEach((user) => {
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-					'<td>' + user.name + '</td>' +
+					'<td>' + user.name.toUpperCase() + '</td>' +
 					'<td>' + user.stats.percent + '</td>' +
 					'<td>' + user.stats.exercises.percent + '</td>' +
 					'<td>' + user.stats.reads.percent + '</td>' +
@@ -132,7 +132,7 @@ selectOrderBy.addEventListener("change", () => {
 			usersWithStats.forEach((user) => {
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-					'<td>' + user.name + '</td>' +
+					'<td>' + user.name.toUpperCase() + '</td>' +
 					'<td>' + user.stats.percent + '</td>' +
 					'<td>' + user.stats.exercises.percent + '</td>' +
 					'<td>' + user.stats.reads.percent + '</td>' +
@@ -145,7 +145,7 @@ selectOrderBy.addEventListener("change", () => {
 				sortUsers(usersWithStats, selectOrderBy.value, "Ascendente");
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-					'<td>' + user.name + '</td>' +
+					'<td>' + user.name.toUpperCase() + '</td>' +
 					'<td>' + user.stats.percent + '</td>' +
 					'<td>' + user.stats.exercises.percent + '</td>' +
 					'<td>' + user.stats.reads.percent + '</td>' +
@@ -154,11 +154,13 @@ selectOrderBy.addEventListener("change", () => {
 			})
 		}
 		if (selectOrderBy.value === "lecturas") {
-      				sortUsers(usersWithStats, selectOrderBy.value, "Ascendente");
 			usersWithStats.forEach((user) => {
+
+				sortUsers(usersWithStats, selectOrderBy.value, "Ascendente");
+
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-					'<td>' + user.name + '</td>' +
+					'<td>' + user.name.toUpperCase() + '</td>' +
 					'<td>' + user.stats.percent + '</td>' +
 					'<td>' + user.stats.exercises.percent + '</td>' +
 					'<td>' + user.stats.reads.percent + '</td>' +
@@ -171,7 +173,7 @@ selectOrderBy.addEventListener("change", () => {
 				sortUsers(usersWithStats, selectOrderBy.value, "Ascendente");
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-					'<td>' + user.name + '</td>' +
+					'<td>' + user.name.toUpperCase() + '</td>' +
 					'<td>' + user.stats.percent + '</td>' +
 					'<td>' + user.stats.exercises.percent + '</td>' +
 					'<td>' + user.stats.reads.percent + '</td>' +
@@ -201,14 +203,14 @@ textUser.addEventListener("keyup", () => {
 
 			celda += '<tr id="cuerpoData">' +
 				// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-				'<td>' + user.name + '</td>' +
+				'<td>' + user.name.toUpperCase() + '</td>' +
 				'<td>' + user.stats.percent + '</td>' +
 				'<td>' + user.stats.exercises.percent + '</td>' +
 				'<td>' + user.stats.reads.percent + '</td>' +
 				'<td>' + user.stats.quizzes.percent + '</td>' +
 				'</tr>';
 		})
+
 		dataStudents.innerHTML = celda;
 
 })
-

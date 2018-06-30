@@ -1,27 +1,28 @@
+/* Diseño de etiquetas Generales  */
 body{
     margin: 0;
     padding: 0;
-    background: #ffe521;
-
 }
+select{
+    font-family: "Bitter";
+    color : black;
+}
+/* Cabecera de la pagina */
 header{
     padding: 5px;
     background-color: #000000;
-}
-#select{
-    font-family: "Bitter";
-    color : black;
 }
 img{
     width: 200px;
     height: 50px;
     margin: 5px 20px;
 }
+/* Separacion Horizontal */
 hr{
     margin: 0;
     padding: 0;
 }
-/* cntenido */
+/* contenido */
 #general{
     font-family: "Bitter";
     padding: 0%;
@@ -30,20 +31,16 @@ hr{
 /* menuIzquierdo */
 #menuD{
     display: inline-block;
-    padding: 30px;
-    right: 10px;    
+    margin: 10px 0 0 10px;
+    padding: 0 20px;
+    right: 10px; 
+    background: #ffe521;  
+    height: 1024px;
 }
-
 #menuD img{
     width: 150px;
     height: 150px;
     margin: 20px;
-}
-#menuD p{
-    text-align: center;
-    font-size: 30px;
-    color: #000000;
-    font-family: "Bitter";
 }
 #dashB { 
     display: block;
@@ -70,7 +67,7 @@ hr{
 }
 #curso{ 
     display: block;
-    padding: 10px 39px;
+    padding: 10px 35px;
     margin-bottom: 20px;
     margin-top: 5px;
     text-align: center;
@@ -92,32 +89,36 @@ hr{
     color: #ffffff;
     box-shadow: inset 0 0 0 3px #FF009E;
 }
-/* division */
+/* division Vertical*/
 #vl{
-    border-left: 1px solid #000000;
+    border-left: 1px solid #d9d9d9;
     position: absolute;
     display: inline-block;
-    left: 13%;
+    left: 15.5%;
     height: 450px;
     top : 0;
-    margin: 122px 0;
+    margin: 22px 0;
 }
 /* contenidDerecho */
 #contenido{
-    left: 16%;
     position: absolute;
+    left: 16%;
+    top: 0;
     display: inline-block;
-    width: 84%;
-    top:65px;
+    width: 83%;
+    margin-top: 10px;
 }
-#contenido p{
+/* Seccion de Sedes */
+#sedes{
+    width: 100%;
+}
+#sedes p{
     text-align: center;
     font-size: 50px;
-    color: #000000;
+    color: #ffffff;
     font-family: "Bitter";
 }
 .sectionFilas {
-    border-width: 0;
     padding: 20px 0;
     display: flex;
     justify-content: space-around;
@@ -131,139 +132,116 @@ hr{
     font-family:"Bitter";
     border-radius:10px;
     color: white;
+    transition: all 500ms ease;
 }
 .centers:hover { 
     background:#FF009E;
     color: #ffffff;
     box-shadow: inset 0 0 0 3px #FF009E;
 }
+/* Seccion de Cohorts */
 #selectCenters{
-    position: absolute;
-    top:105px;
-    left: 16%;
-    width: 83%;
-    height: 500px;
-    
+    margin: 20px 5%;
+    padding: 10px;
+    width: 90%;
 }
 #selectCenters p {
-    position: absolute;
-    left: 16%;
-    width: 83%;
-    height: 500px;
     font-family:"Bitter";
     font-size: 30px;
 }
 #selectCenters select{
-    position: absolute;
-    top:95px;
-    left: 16%;
     font-size: 20px;
     font-family:"Bitter";
+    margin: 0 0 50px 90px;
 }
+/* Listado de Usuarias */
 #contenidoData{
-    position: absolute;
-    top:65px;
-    left: 16%;
-    width: 83%;
-    height: 500px;
-}
-#chooseFilter{
-    display: block;
-    margin:10px 0 5px 0;
-    border-width: 0;
-    font-family:"Bitter";
-    font-size: 15px;
- }
-#filtros{
-   background-color:  #d9d9d9   ;
-   border-width: 0;
-   justify-content: space-around;
-}
-#filtros select{
-    border-width: 0;
-    width: 30%;
-    font-size: 20px;
-    padding: 10px 0;
-    font-family:"Bitter";
+    width: 100%;
 }
 #contenidoFiltros{
-    position: absolute;
-    top:65px;
-    left: 16%;
-    width: 83%;
-    height: 500px;
+    display: flex;
+    justify-content: space-around;
 }
 #buscador{
-    position: absolute;
-    right: 20px;
+    display: inline-block;
     border-radius: 5px;
     margin: 5px 0;
+    padding: 5px 10% 5px 2%;
+    width: 49%;
+    border: 2px solid #FF009E;
 }
 #buscador p{
-    display: inline-block;
-    margin: 0 2px 0 0; 
-    padding: 8%;
-    
+    font-family:"Bitter";
+    font-size: 25px;  
 }
 #buscador input{
+    margin: 0 15% 0 35%;
     border-radius: 5px;
+    font-size: 20px;
+}
+#filter{
+    display: inline-block;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding:10px 20% 10px 2%;
+    width: 49%;
+    border: 2px solid #FF009E;
+
+}
+#filter p{
+    font-family:"Bitter";
+    font-size: 25px;  
+}
+#filtrosOrder{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 0 30%;
+    padding: 2px 70%;
+}
+#filtroPorOrderBy{
+    font-size: 20px;
+    font-family:"Bitter";
+    margin: 0 30px 0 5%;
+}
+#filtroPorDirection{
+    font-size: 20px;
+    font-family:"Bitter";
+    margin: 0 5% 0 30px;
 }
 #listStudents{
-    margin: 50px 0; 
+   padding: 2% 0.5%;
 }
-/*Etiqueta ul*/
-.listEstudiantes{
-    list-style: none;
-    padding: 2px 5px;
-    margin: 0;
-}
-/*Etiqueta li*/
-.listasEstudiantes{
-    list-style: none;
-    margin: 0px;
-    padding: 10px 5px;
-    border: 2px solid #bfbfbf;
-    box-sizing: border-box;
-    transition: all 500ms ease;
-}
-.listasEstudiantes:hover{
-    background:#d9d9d9;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 3px #e6e6e6;
-}
-/*Etiqueta a*/
-.rutasNombres{
-    text-decoration: none;
-    font-size: 20px;
-    display: block;
-    font-family:"Bitter";
-    color: #000000;
-}
+#listStudents table{
+    width: 100%;
 
-
+}
 #cabecera{
     text-align: center;
-    background: #FF009E;
     padding: 15px 0;
-
+    border: 2px solid #FF009E;
 }
 #cabecera th{
     font-family: "Bitter";
     padding: 8px 0;
     font-size: 20px;
-    border: 1px ;
-    color:#000000;
-
-   
+    text-align: center;
+    border: 2px solid #FF009E;
+    color:#000000;   
 }
 #cuerpoData{
     text-align: center;
     margin: 0;
+    transition: all 500ms ease;
 }
 #cuerpoData td{
     padding: 5px 0;
     font-size: 15px;
-    border: 1px solid black;
+    border: 2px solid #FF009E;
     margin: 0;
+}
+#cuerpoData:hover{
+    background:#d9d9d9;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 3px #e6e6e6;
 }
 

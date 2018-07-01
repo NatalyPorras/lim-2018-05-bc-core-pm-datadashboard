@@ -5,7 +5,7 @@ window.computeUsersStats = (users, progress, courses) => {
   let progressTotalQuiz = 0; calcularEjercicio = 0, calcularLectura = 0, calcularQuiz = 0, QuizzeProgress = 0;
   let usuarios = users;
   users.forEach((user) => {
- 
+
       const userId = user.id;
       const userProgress = progress[userId];
       if (userProgress && userProgress.hasOwnProperty('intro') && userProgress.intro.hasOwnProperty('units')) {

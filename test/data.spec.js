@@ -77,14 +77,52 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
-
+    const usersSort=fixtures.users;
     it('debería retornar arreglo de usuarios ordenado por nombre ASC',() =>{
-      assert.is
+     const nameOrder= usersSort.sort((primerD,segundoD)=>{
+      if (primerD.name > segundoD.name) {
+        return 1;
+      } else if (primerD.name < segundoD.name) {
+        return -1;
+      }
+      return 0;
+     })
+     const processedSort=sortUsers(usersSort,"name","Ascendente");
+
+     assert.equal(nameOrder,processedSort);
     });
 
-    it('debería retornar arreglo de usuarios ordenado por nombre DESC');
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
+    it('debería retornar arreglo de usuarios ordenado por nombre DESC',()=>{
+      const nameOrder= usersSort.sort((primerD,segundoD)=>{
+        if (primerD.name > segundoD.name) {
+          return 1;
+        } else if (primerD.name < segundoD.name) {
+          return -1;
+        }
+        return 0;
+       })
+       const processedSort=sortUsers(usersSort,"name","Descendente");
+  
+       assert.equal(nameOrder,processedSort);
+    });
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC',()=>{
+      const userN= fixtures.users;
+      const percentOrder=   userN.sort((primerD, segundoD) => {
+        return (primerD.stats.percent - segundoD.stats.percent);
+      })
+      const processedC=sortUsers(userN,"compeltitud","Ascendente");
+ 
+      assert.deepEqual(processedC,percentOrder);
+    });
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC',()=>{
+      const userN= fixtures.users;
+      const percentOrder=   userN.sort((primerD, segundoD) => {
+        return (primerD.stats.percent - segundoD.stats.percent);
+      })
+      const processedC=sortUsers(userN,"compeltitud","Descendente");
+ 
+      assert.deepEqual(processedC,percentOrder);
+    });
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');
     it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC');

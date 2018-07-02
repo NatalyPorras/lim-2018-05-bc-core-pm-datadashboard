@@ -195,7 +195,7 @@ describe('data', () => {
     const courses = Object.keys(cohort.coursesIndex);
     const { users, progress } = fixtures;
     it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter',()=>{
-      const options = {
+      let options = {
         cohort: courses,
         cohortData: {
           users: users,
@@ -206,11 +206,12 @@ describe('data', () => {
         search: 'Vanessa'
       }
       const processed = processCohortData(options);
-      users.forEach(user => {
+      processed.forEach(user => {
         assert.ok(user.hasOwnProperty('stats'));
       });
-  
-      const userName = users.sort((primerD, segundoD) => {
+
+      // -----------------------------
+      const userName = processed.sort((primerD, segundoD) => {
         if (primerD.name > segundoD.name) {
           return 1;
         } else if (primerD.name < segundoD.name) {
@@ -218,15 +219,13 @@ describe('data', () => {
         }
         return 0;
       })
-
       assert.deepEqual(userName, processed);
-
+      // ------------------------------
       const search = 'Vanessa';
       const FilterUsers =  users.filter((user) => {
         return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
       })
-    
-    assert.deepEqual(FilterUsers,processed)
+    assert.deepEqual(FilterUsers,processed) 
     });
     
 

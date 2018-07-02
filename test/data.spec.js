@@ -87,9 +87,9 @@ describe('data', () => {
       }
       return 0;
      })
-     const processedSort=sortUsers(usersSort,"name","Ascendente");
+     const processedSort=sortUsers(usersSort,"name","Asc");
 
-     assert.equal(nameOrder,processedSort);
+     assert.deepEqual(nameOrder,processedSort);
     });
 
     it('debería retornar arreglo de usuarios ordenado por nombre DESC',()=>{
@@ -103,7 +103,7 @@ describe('data', () => {
        })
        const processedSort=sortUsers(usersSort,"name","Descendente");
   
-       assert.equal(nameOrder,processedSort);
+       assert.deepEqual(nameOrder,processedSort);
     });
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC',()=>{
       const userN= fixtures.users;
@@ -121,7 +121,8 @@ describe('data', () => {
       })
       const processedC=sortUsers(userN,"compeltitud","Descendente");
  
-      assert.deepEqual(processedC,percentOrder);
+      const result = assert.deepEqual(processedC,percentOrder);
+      console.log(result);
     });
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');

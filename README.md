@@ -165,20 +165,10 @@ Debes hacer un _sketch_ (boceto) de tu solución usando papel y lápiz, tomarle
 una foto, subirla a tu repositorio y hacer mención del _sketch_ en tu `README.md`.
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
+Diseño de un prototipo de alta fidelidad
+https://www.figma.com/file/RfzFOq6mLCaLfM8UjKE2vdzr/DATA-DASHBOARD?node-id=32%3A60
 
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés).
-Para eso debes aprender a utilizar alguna herramienta de diseño visual.
-Nosotros te recomendamos [Figma](https://www.figma.com/) que  es una herramienta
-que funciona en el navegador y, además, puedes crear una cuenta gratis. Sin
-embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc.
-
-El diseño debe representar tu _ideal_ de solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para hackear.
-
-Tu diseño debe seguir los fundamentos de _visual design_, como:
-contraste, alineación, jerarquía, entre otros. Tip: revisa el contenido de UX
-de la unidad de visual design.
+El diseño presenta una ideal ejecucion y solucion del problema, con un tiempo accesible para el desarrollo es lo que se deberia esperar.
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 

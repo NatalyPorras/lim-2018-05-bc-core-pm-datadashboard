@@ -165,7 +165,7 @@ Debes hacer un _sketch_ (boceto) de tu solución usando papel y lápiz, tomarle
 una foto, subirla a tu repositorio y hacer mención del _sketch_ en tu `README.md`.
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
-Diseño de un prototipo de alta fidelidad
+Diseño de un prototipo de alta fidelidad.
 https://www.figma.com/file/RfzFOq6mLCaLfM8UjKE2vdzr/DATA-DASHBOARD?node-id=32%3A60
 
 El diseño presenta una ideal ejecucion y solucion del problema, con un tiempo accesible para el desarrollo es lo que se deberia esperar.

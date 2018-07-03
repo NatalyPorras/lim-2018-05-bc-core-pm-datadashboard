@@ -186,8 +186,8 @@ window.processCohortData = (options) => {
   let sortUserWithCompute = sortUsers(computeUser, options.orderBy, options.orderDirection);
   if (options.search !== " ") {
     let filterUsersWithSort = filterUsers(sortUserWithCompute, options.search);
+    console.log(filterUsersWithSort)
     return filterUsersWithSort
-
   }
   return sortUserWithCompute;
 

@@ -239,14 +239,24 @@ describe('data', () => {
 
   describe('filterUsers(users, filterBy)', () => {
     const usersilter = fixtures.users;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a8aa56e13099dadfc1ded73812a582c74029d241
     it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)',()=>{
       const search = 'Vanessa';
       const FilterUsers =  usersilter.filter((user) => {
         return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
       })
     const processed= filterUsers(usersilter,search);
+<<<<<<< HEAD
     assert.deepEqual(FilterUsers,processed)
   });
+=======
+    assert.deepEqual(FilterUsers,processed)    
+  });
+
+>>>>>>> a8aa56e13099dadfc1ded73812a582c74029d241
   });
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
@@ -254,6 +264,13 @@ describe('data', () => {
     const courses = Object.keys(cohort.coursesIndex);
     const { users, progress } = fixtures;
     it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter',()=>{
+<<<<<<< HEAD
+=======
+
+      // ------------------------------------------------------------------------------------------------------------
+      
+
+>>>>>>> a8aa56e13099dadfc1ded73812a582c74029d241
       let options = {
         cohort: courses,
         cohortData: {
@@ -262,6 +279,7 @@ describe('data', () => {
         },
         orderBy: 'name',
         orderDirection: 'Ascendente',
+<<<<<<< HEAD
         search: 'Vanessa'
       }
       const processed = processCohortData(options);
@@ -287,6 +305,46 @@ describe('data', () => {
     assert.deepEqual(FilterUsers,processed) 
     });
     
+=======
+        search: 'manuela'
+      };
+
+    const userData = [{
+      id: "JOWii3vYeBW5FAoEP1gOcFl0g0I2",
+      name: "manuela",
+      locale: "es-PE",
+      signupCohort: "lim-2018-03-pre-core-pw",
+      timezone: "America/Lima",
+      role: "student",
+      stats: {
+        percent: 0,
+        exercises: {
+          total: 2,
+          completed: 0,
+          percent: 0
+        },
+        reads: {
+          total: 11,
+          completed: 0,
+          percent: 0
+        },
+        quizzes: {
+          total: 3,
+          completed: 0,
+          percent: 0,
+          scoreSum: 0,
+          scoreAvg: 0
+        }
+      }
+    }];
+  const processed = processCohortData(options);
+
+  assert.deepEqual(userData,processed)   
+
+    });
+   
+  
+>>>>>>> a8aa56e13099dadfc1ded73812a582c74029d241
 
   });
 

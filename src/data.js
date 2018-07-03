@@ -101,7 +101,8 @@ window.computeUsersStats = (users, progress, courses) => {
    let usersWithStats= users.map((user) => {
     const userId = user.id;
     const userProgress = progress[userId];
-    if (userProgress && userProgress.hasOwnProperty('intro') && userProgress.intro.hasOwnProperty('units')) {
+    const course=courses.toString();
+    if (userProgress && userProgress.hasOwnProperty(course) && userProgress.intro.hasOwnProperty('units')) {
       const units = userProgress.intro.units;
       const progressTotal = Object.keys(units).reduce((sumProgress, unit) => {
         return sumProgress + units[unit].percent;

@@ -1,273 +1,415 @@
 body{
     margin: 0;
     padding: 0;
-    background: #ffe521;
+}
+@media all and (max-width: 1824px) {
+    header{
+        padding: 5px;
+        background-color: #000000;
+    }
+    #select{
+        font-family: "Bitter";
+        color : black;
+    }
+    img{
+        height: 50px;
+        margin: 5px 20px;
+    }
+    hr{
+        margin: 0;
+        padding: 0;
+    }
+    /* cntenido */
+    #general{
+        font-family: "Bitter";
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        height: 1024px;
+    }
+    /* menuIzquierdo */
+    #menuD{
+        display: inline-block;
+        padding: 20px 2%;
+        width: 13%;
+        height: 100%;
+        background-color: #ffe521;
 
+    }
+    
+    #menuD img{
+    width: 150px;
+    height: 150px;
+    margin: 10px;   
+    }
+    #dashB { 
+        display: block;
+        padding: 10px 10px;
+        margin-bottom: 10px;
+        margin-top: 40px;
+        background: #ffffff;
+        border-radius: 5%;
+        transition: all 500ms ease;
+        font-family:"Bitter";
+        width: 100%;
+        font-size: 32px;
+        text-align: center;
+    }
+    #dashB img{
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: 0 45px;
+    }
+    #dashB:hover { 
+        background:#FF009E;
+        color: #ffffff;
+        box-shadow: inset 0 0 0 3px #FF009E;
+    }
+
+    /* contenidDerecho */
+    #contenido{
+        position: absolute;
+        display: inline-block;
+        width:83%;
+        top:75px;
+    }
+    
+    #contenido p{
+        text-align: center;
+        font-size: 50px;
+        color: #000000;
+        font-family: "Bitter";
+    }
+    .sectionFilas {
+        border-width: 0;
+        padding: 20px 0;
+        margin: 0 15%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .centers{
+        border-width: 0;
+        width: 40%;
+        font-size: 30px;
+        padding: 20px 0;
+        background:#E64C65;
+        font-family:"Bitter";
+        border-radius:10px;
+        color: white;
+    }
+    .centers:hover { 
+        background:#FF009E;
+        color: #ffffff;
+        box-shadow: inset 0 0 0 3px #FF009E;
+    }
+    #selectCenters{
+        position: absolute;
+        top:105px;
+        left: 17%;
+        width: 83%;
+        height: 1024px;
+        
+    }
+    #selectCenters p {
+        margin: 5%;
+        font-family:"Bitter";
+        font-size: 30px;
+    }
+    #selectCenters select{
+        top:95px;
+        font-size: 20px;
+        font-family:"Bitter";
+        margin: 0 25%;
+        width: 50%;
+    }
+    #contenidoData{
+        position: absolute;
+        top:75px;
+        left: 17%;
+        width: 81%;
+        height: 1024px;
+        padding: 1%
+    }
+    #contenidoFiltros{
+        width: 100%;
+        padding: 2px 0;
+    }
+    #buscador{
+        display: inline-block;
+        border-radius: 5px;
+        width:47%;
+        padding: 15px 1%;
+        margin: 0;
+        border: 2px solid #FF009E;
+    }
+    #buscador p{
+        margin: 0;
+        font-size: 35px;
+    }
+    #buscador input{
+        border-radius: 5px;
+        margin: 2px 0 0 15%;
+        font-size: 20px;
+        width: 75%;
+    }
+    #filtrosOrder{
+        display: inline-block;
+        border-radius: 5px;
+        width:47%;
+        padding: 15px 1%;
+        margin: 0;
+        border: 2px solid #FF009E;
+    }
+    #filtrosOrder p{
+        margin: 0;
+        font-size: 35px;
+    }
+    #filtroPorOrderBy{
+        border-radius: 5px;
+        margin: 2px 0 0 10%;
+        font-size: 20px;
+        width: 35%;
+
+    }  
+    #filtroPorDirection{
+        border-radius: 5px;
+        margin: 2px 10% 0 9%;
+        font-size: 20px;
+        width: 35%;
+    }
+    #listStudents{
+        width: 100%;
+        margin: 5px 0;
+    }
+    #tablaUsers{
+        width: 100%;
+      
+    }
+    #cabecera{
+        text-align: center;
+        padding: 15px 0;
+          
+    }
+    #cabecera th{
+        font-family: "Bitter";
+        padding: 8px 1%;
+        font-size: 19px;
+        border: 2px solid #FF009E;
+    }
+    #cuerpoData{
+        text-align: center;
+        margin: 0;
+    }
+    #cuerpoData td{
+        padding: 5px 0;
+        font-size: 14px;
+        border: 2px solid #FF009E;
+    }
 }
-header{
-    padding: 5px;
-    background-color: #000000;
-}
-#select{
-    font-family: "Bitter";
-    color : black;
-}
-img{
+@media all and (max-width: 360px) {
+    header{
+        padding: 5px;
+        background-color: #000000;
+    }
+    #select{
+        font-family: "Bitter";
+        color : black;
+    }
+    img{
+        height: 20px;
+        margin: 5px 5px;
+    }
+    hr{
+        margin: 0;
+        padding: 0;
+    }
+    /* cntenido */
+    #general{
+        font-family: "Bitter";
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        height: 1024px;
+    }
+    /* menuIzquierdo */
+    #menuD{
+        display: block;
+        padding: 5px 2%;
+        background-color: #ffe521;
+        width: 96%;
+        height: 70px;
+    }
+    
+    #menuD img{
+    display: inline-block;
+    width: 50px;
     height: 50px;
-    margin: 5px 20px;
-}
-hr{
-    margin: 0;
-    padding: 0;
-}
-/* cntenido */
-#general{
-    font-family: "Bitter";
-    padding: 0%;
-    margin: 0%;
-    width: 100%;
+    margin: 10px 5%;   
+    }
+    #dashB { 
+        display: inline-block;
+        position: absolute;
+        padding: 5px 2%;
+        background: #ffffff;
+        border-radius: 5%;
+        transition: all 500ms ease;
+        font-family:"Bitter";
+        width: 20%;
+        font-size: 12px;
+        text-align: center;
+        top: 60px;
+        margin: 2px 15%;
+    }
+    #dashB img{
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: 0 15px;
+    }
+    #dashB:hover { 
+        background:#FF009E;
+        color: #ffffff;
+        box-shadow: inset 0 0 0 3px #FF009E;
+    }
+    /* contenidDerecho */
+    #contenido{
+        top: 130px;
+        width: 100%;
 
-}
-/* menuIzquierdo */
-#menuD{
-    display: inline-block;
-    padding: 20px;
-    right: 10px;    
-    width: 25%;
-}
+    }
+    #contenido p{
+        text-align: center;
+        font-size: 30px;
+        color: #000000;
+        font-family: "Bitter";
+    }
+    .sectionFilas {
+        border-width: 0;
+        margin: 0 5%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    .centers{
+        border-width: 0;
+        width: 40%;
+        font-size: 20px;
+        padding: 20px 0;
+        background:#E64C65;
+        font-family:"Bitter";
+        border-radius:10px;
+        color: white;
+    }
+    .centers:hover { 
+        background:#FF009E;
+        color: #ffffff;
+        box-shadow: inset 0 0 0 3px #FF009E;
+    }
+    #selectCenters{
 
-#menuD img{
-width: 50%;
-height: 50%;
-margin: 10px;   
+        top:145px;
+        left: 12%;
+        width: 83%;
+        height: 1024px;
+        
+    }
+    #selectCenters p {
+        margin: 5%;
+        font-family:"Bitter";
+        font-size: 25px;
+    }
+    #selectCenters select{
+        top:95px;
+        font-size: 15px;
+        font-family:"Bitter";
+        margin: 0 15%;
+        width: 80%;
+    }
+    #contenidoData{
 
-}
-#dashB { 
-    padding: 10px 35px;
-    margin-bottom: 10px;
-    margin-top: 40px;
-    background: #ffffff;
-    border-radius: 5%;
-    transition: all 500ms ease;
-    font-family:"Bitter";
-    width: 15vw;
-    font-size: 1.2vw;
-    
-}
-#dashB img{
-    display: block;
-    width: 4.5vw;
-    margin: 0 15px;
-    
-}
-#dashB:hover { 
-    background:#FF009E;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 3px #FF009E;
-}
-#curso{ 
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    background: #ffffff;
-    border-radius: 5%;
-    transition: all 500ms ease;
-    font-family:"Bitter";;
-    width: 15vw;
-    font-size: 1.2vw;
-}
-#curso img{
-    display: block;
-    width: 4.5vw;
-    margin: 0 34px;
-}
-#curso:hover { 
-    background:#FF009E;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 3px #FF009E; 
-}
+        top:140px;
+        left: 0;
+        width: 81%;
+        height: 1024px;
+        padding: 0;
+    }
+    #contenidoFiltros{
+        width: 100%;
+        padding: 2px 0;
+        margin: 0 10%;
+    }
+    #buscador{
+        display: inline-block;
+        border-radius: 5px;
+        width:45%;
+        padding: 5px 1%;
+        margin: 0;
+        border: 2px solid #FF009E;
+    }
+    #buscador p{
+        margin: 0;
+        font-size: 15px;
+    }
+    #buscador input{
+        border-radius: 5px;
+        margin: 2px 0 0 15%;
+        font-size: 10px;
+        width: 65%;
+    }
+    #filtrosOrder{
+        display: inline-block;
+        border-radius: 5px;
+        width:45%;
+        padding: 5px 1%;
+        margin: 0 0 0 1.5%;
+        border: 2px solid #FF009E;
+    }
+    #filtrosOrder p{
+        margin: 0;
+        font-size: 15px;
+    }
+    #filtroPorOrderBy{
+        border-radius: 5px;
+        margin: 2px 0 0 5%;
+        font-size: 10px;
+        width: 40%;
+    }  
+    #filtroPorDirection{
+        border-radius: 5px;
+        margin: 2px 0 0 9%;
+        font-size: 10px;
+        width: 40%;
+    }
+    #listStudents{
+        width: 100%;
+        margin: 5px 0;
 
-
-/* contenidDerecho */
-#contenido{
-    left: 16%;
-    position: absolute;
-    display: inline-block;
-    width: 100vw;
-    top:65px;
+    }
+    #tablaUsers{
+        width: 100%;
+      
+    }
+    #cabecera{
+        text-align: center;
+        padding: 15px 0;
+          
+    }
+    #cabecera th{
+        font-family: "Bitter";
+        padding: 8px 0.5%;
+        font-size: 7px;
+        margin: 0;
+        border: 2px solid #FF009E;
+    }
+    #cuerpoData{
+        text-align: center;
+        margin: 0;
+    }
+    #cuerpoData td{
+        margin: 0;
+        padding: 2px 0;
+        font-size: 5px;
+        border: 2px solid #FF009E;
+    }
 }
-
-#contenido p{
-    text-align: center;
-    font-size: 50px;
-    color: #000000;
-    font-family: "Bitter";
-    width: 80vw;
-}
-.sectionFilas {
-    border-width: 0;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-}
-.centers{
-    border-width: 0;
-    width: 40%;
-    font-size: 30px;
-    padding: 20px 0;
-    background:#E64C65;
-    font-family:"Bitter";
-    border-radius:10px;
-    color: white;
-    width: 30vw;
-}
-.centers:hover { 
-    background:#FF009E;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 3px #FF009E;
-}
-#selectCenters{
-    position: absolute;
-    top:105px;
-    left: 16%;
-    width: 83vw;
-    height: 500px;
-    
-}
-#selectCenters p {
-    position: absolute;
-    left: 16%;
-    width: 83vw;
-    height: 500px;
-    font-family:"Bitter";
-    font-size: 30px;
-}
-#selectCenters select{
-    position: absolute;
-    top:95px;
-    left: 16%;
-    font-size: 20px;
-    font-family:"Bitter";
-    width: 50vw;
-}
-#contenidoData{
-    position: absolute;
-    top:65px;
-    left: 16%;
-    width: 83%;
-    height: 500px;
-}
-#filtroPorOrderBy{
-    margin-bottom: 60px;
-    
-}
-#chooseFilter{
-    display: block;
-    margin:10px 0 5px 0;
-    border-width: 0;
-    font-family:"Bitter";
-    font-size: 15px;
- }
-#filtros{
-   background-color:  #d9d9d9   ;
-   border-width: 0;
-   justify-content: space-around;
-}
-#filtros select{
-    border-width: 0;
-    width: 30%;
-    font-size: 20px;
-    padding: 10px 0;
-    font-family:"Bitter";
-}
-#contenidoFiltros{
-    position: absolute;
-    top:65px;
-    left: 16%;
-    width: 83%;
-    height: 500px;
-}
-#buscador{
-   border-radius: 5px;
-    margin: -80px;
-    padding-left: 600px;
-}
-#tablaUsers{
-    width: 50vw;
-}
-#textU{
-    width: 15vw;
-}
-filtroPorOrderBy{
-width: 15vw;
-}
-#buscador p{
-    display: inline-block;
-    margin: 0 2px 0 0; 
-    padding: 8%;
-    
-}
-#buscador input{
-    border-radius: 5px;
-}
-#listStudents{
-    margin: 50px 0; 
-}
-/*Etiqueta ul*/
-.listEstudiantes{
-    list-style: none;
-    padding: 2px 5px;
-    margin: 0;
-}
-/*Etiqueta li*/
-.listasEstudiantes{
-    list-style: none;
-    margin: 0px;
-    padding: 10px 5px;
-    border: 2px solid #bfbfbf;
-    box-sizing: border-box;
-    transition: all 500ms ease;
-}
-.listasEstudiantes:hover{
-    background:#d9d9d9;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 3px #e6e6e6;
-}
-/*Etiqueta a*/
-.rutasNombres{
-    text-decoration: none;
-    font-size: 20px;
-    display: block;
-    font-family:"Bitter";
-    color: #000000;
-}
-
-
-#cabecera{
-    text-align: center;
-    background: #FF009E;
-    padding: 15px 0;
-
-}
-#cabecera th{
-    font-family: "Bitter";
-    padding: 8px 0;
-    font-size: 20px;
-    border: 1px ;
-    color:#000000;
-
-   
-}
-#cuerpoData{
-    text-align: center;
-    margin: 0;
-}
-#cuerpoData td{
-    padding: 5px 0;
-    font-size: 15px;
-    border: 1px solid black;
-    margin: 0;
-}
-
-

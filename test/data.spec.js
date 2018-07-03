@@ -179,17 +179,74 @@ describe('data', () => {
   });
 
   describe('filterUsers(users, filterBy)', () => {
-    const usersWithStats = fixtures.users;
+    const usersilter = fixtures.users;
 
     it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)',()=>{
-      assert.deepEqual(filterUsers(usersWithStats,"vanessa"),"11")
-    });
+      const search = 'Vanessa';
+      const FilterUsers =  usersilter.filter((user) => {
+        return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
+      })
+    const processed= filterUsers(usersilter,search);
+    assert.deepEqual(FilterUsers,processed)    
+  });
 
   });
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
+    const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
+    const courses = Object.keys(cohort.coursesIndex);
+    const { users, progress } = fixtures;
+    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter',()=>{
 
-    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter');
+      // ------------------------------------------------------------------------------------------------------------
+      
+
+      let options = {
+        cohort: courses,
+        cohortData: {
+          users: users,
+          progress: progress
+        },
+        orderBy: 'name',
+        orderDirection: 'Ascendente',
+        search: 'manuela'
+      };
+
+    const userData = [{
+      id: "JOWii3vYeBW5FAoEP1gOcFl0g0I2",
+      name: "manuela",
+      locale: "es-PE",
+      signupCohort: "lim-2018-03-pre-core-pw",
+      timezone: "America/Lima",
+      role: "student",
+      stats: {
+        percent: 0,
+        exercises: {
+          total: 2,
+          completed: 0,
+          percent: 0
+        },
+        reads: {
+          total: 11,
+          completed: 0,
+          percent: 0
+        },
+        quizzes: {
+          total: 3,
+          completed: 0,
+          percent: 0,
+          scoreSum: 0,
+          scoreAvg: 0
+        }
+      }
+    }];
+  const processed = processCohortData(options);
+
+  assert.deepEqual(userData,processed)   
+
+    });
+   
+  
 
   });
 

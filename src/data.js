@@ -7,7 +7,8 @@ window.computeUsersStats = (users, progress, courses) => {
    let usersWithStats= users.map((user) => {
     const userId = user.id;
     const userProgress = progress[userId];
-    if (userProgress && userProgress.hasOwnProperty('intro') && userProgress.intro.hasOwnProperty('units')) {
+    const course=courses.toString();
+    if (userProgress && userProgress.hasOwnProperty(course) && userProgress.intro.hasOwnProperty('units')) {
       const units = userProgress.intro.units;
       const progressTotal = Object.keys(units).reduce((sumProgress, unit) => {
         return sumProgress + units[unit].percent;
@@ -114,9 +115,16 @@ window.computeUsersStats = (users, progress, courses) => {
     return user;
 
   });
+<<<<<<< HEAD
 
   return usersWithStats;
 };
+=======
+console.log(usersWithStats)
+  return usersWithStats;
+};
+
+>>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
 window.sortUsers = (users, orderBy, orderDirection) => {
   if (orderBy === "name" && orderDirection === "Ascendente") {
     users.sort((primerD, segundoD) => {
@@ -186,7 +194,10 @@ window.processCohortData = (options) => {
   let sortUserWithCompute = sortUsers(computeUser, options.orderBy, options.orderDirection);
   if (options.search !== " ") {
     let filterUsersWithSort = filterUsers(sortUserWithCompute, options.search);
+<<<<<<< HEAD
     console.log(filterUsersWithSort)
+=======
+>>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
     return filterUsersWithSort
   }
   return sortUserWithCompute;

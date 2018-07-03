@@ -140,35 +140,35 @@ describe('data', () => {
       const processed = sortUsers(usersWithStats, "quizzes", "Ascendente");
       assert.deepEqual(userQuizzesTotal, processed);
     });
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC',()=>{
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC', () => {
       const userQuizzesTotal = usersWithStats.sort((primerD, segundoD) => {
         return (segundoD.stats.quizzes.completed - primerD.stats.quizzes.completed);
       })
       const processed = sortUsers(usersWithStats, "quizzes", "Descendente");
       assert.deepEqual(userQuizzesTotal, processed);
     });
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC',()=>{
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC', () => {
       const userQuizzespROMEDIO = usersWithStats.sort((primerD, segundoD) => {
         return (primerD.stats.quizzes.scoreAvg - segundoD.stats.quizzes.scoreAvg);
       })
       const processed = sortUsers(usersWithStats, "quizzesScore", "Ascendente");
       assert.deepEqual(userQuizzespROMEDIO, processed);
     });
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC',()=>{
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC', () => {
       const userQuizzespROMEDIO = usersWithStats.sort((primerD, segundoD) => {
         return (segundoD.stats.quizzes.scoreAvg - primerD.stats.quizzes.scoreAvg);
       })
       const processed = sortUsers(usersWithStats, "quizzesScore", "Descendente");
       assert.deepEqual(userQuizzespROMEDIO, processed);
     });
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC',()=>{
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC', () => {
       const userReadTotal = usersWithStats.sort((primerD, segundoD) => {
         return (primerD.stats.reads.completed - segundoD.stats.reads.completed);
       })
       const processed = sortUsers(usersWithStats, "quizzesScore", "Ascendente");
       assert.deepEqual(userReadTotal, processed);
     });
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC',()=>{
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC', () => {
       const userReadTotal = usersWithStats.sort((primerD, segundoD) => {
         return (segundoD.stats.reads.completed - primerD.stats.reads.completed);
       })
@@ -180,19 +180,22 @@ describe('data', () => {
 
   describe('filterUsers(users, filterBy)', () => {
     const usersilter = fixtures.users;
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)',()=>{
+
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)', () => {
       const search = 'Vanessa';
-      const FilterUsers =  usersilter.filter((user) => {
+      const FilterUsers = usersilter.filter((user) => {
         return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
       })
-    const processed= filterUsers(usersilter,search);
-    assert.deepEqual(FilterUsers,processed)
-  });
+      const processed = filterUsers(usersilter, search);
+      assert.deepEqual(FilterUsers, processed)
+    });
+
   });
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
     const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
     const courses = Object.keys(cohort.coursesIndex);
+<<<<<<< HEAD
     it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter',()=>{
     //   const usersFiler= fixtures.users
     //  const progressFilter=fixtures.progress 
@@ -278,6 +281,15 @@ describe('data', () => {
 
       }
       const options = {
+=======
+    const { users, progress } = fixtures;
+    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter', () => {
+
+      // ------------------------------------------------------------------------------------------------------------
+
+
+      let opt = {
+>>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
         cohort: courses,
         cohortData: {
           users: usersFiler,
@@ -288,11 +300,51 @@ describe('data', () => {
         search: 'Lizeth'
       }
 
+<<<<<<< HEAD
      const  result = processCohortData(options);
       assert.isObject(userFinal);
       assert.isObject(result);
  
     });
+=======
+      const result = processCohortData(opt);
+
+      const userFinal = {
+        id: "00hJv4mzvqM3D9kBy3dfxoJyFV82",
+        locale: "es-ES",
+        name: "Lizeth",
+        role: "student",
+        signupCohort: "lim-2018-03-pre-core-pw",
+        stats: {
+          percent: 53,
+          exercises: {
+            completed: 0,
+            percent: 0,
+            total: 2
+          },
+          reads: {
+            completed: 6,
+            percent: 55,
+            total: 11,
+          },
+          
+          quizzes: {
+            completed: 2,
+            percent: 67,
+            scoreAvg: 29,
+            scoreSum: 57,
+            total: 3
+          }
+
+        }
+
+      }
+
+      assert.equal(result[4].name, userFinal.name)
+    });
+
+
+>>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
 
   });
 

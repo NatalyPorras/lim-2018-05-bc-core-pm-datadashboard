@@ -1,4 +1,3 @@
-// Dclaracion de las variables
 const btnLima = document.getElementById("cLima");
 const btndashB = document.getElementById("dashB");
 const btnfiltro = document.getElementById("filtroPor");
@@ -24,7 +23,7 @@ const procesandoData = ((users, progress, cohorts) => {
 	options.cohortData.progress = progress;
 	options.orderBy = "name";
 	options.orderDirection = "Ascendente";
-	options.search = "";
+	options.search = " ";
 	return processCohortData(options);
 })
 const getAllData = (cb) => {
@@ -59,7 +58,7 @@ btnLima.addEventListener("click", () => {
 		})
 		.catch(error =>
 			console.error('Error: Nat algo haces mal', error));
-	document.getElementById('sedes').style.display = "none";
+	document.getElementById('contenido').style.display = "none";
 	document.getElementById('selectCenters').style.display = "block";
 })
 cohortsSelect.addEventListener("change", (e) => {
@@ -116,13 +115,10 @@ selectOrderBy.addEventListener("change", () => {
 			'<th> QUIZZESSCORE </th>' +
 			'</tr>'
 			let contenido=selectOrderBy.value;
-
 			options.orderBy = contenido;
-
 			// console.log(contenido)
 			let usersWithStats = processCohortData(options)
-			
-		if (selectOrderBy.value === "name" ) {
+		if (selectOrderBy.value === "name") {
 			usersWithStats.forEach((user) => {
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
@@ -167,9 +163,6 @@ selectOrderBy.addEventListener("change", () => {
 		}
 		if (selectOrderBy.value === "lecturas") {
 			usersWithStats.forEach((user) => {
-
-				sortUsers(usersWithStats, selectOrderBy.value, "Ascendente");
-
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
 					'<td>' + user.name.toUpperCase() + '</td>' +
@@ -277,7 +270,7 @@ textUser.addEventListener("keyup", () => {
 
 			celda += '<tr id="cuerpoData">' +
 				// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-				'<td>' + user.name.toUpperCase() + '</td>' +
+				'<td>' + user.name + '</td>' +
 				'<td>' + user.stats.percent + '</td>' +
 				'<td>' + user.stats.exercises.percent + '</td>' +
 				'<td>' + user.stats.reads.percent + '</td>' +
@@ -285,7 +278,6 @@ textUser.addEventListener("keyup", () => {
 				'<td>' + user.stats.quizzes.scoreAvg + '</td>' +
 				'</tr>';
 		})
-
 		dataStudents.innerHTML = celda;
 
 })

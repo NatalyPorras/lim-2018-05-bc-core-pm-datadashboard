@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=1200px, initial−scale=1.0" />
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+<head>
   <title>Data Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-<div id="padre">
-  <header >
+
+  <header>
     <img src="imagenes/logo1.png" alt="">
   </header>
-
   <hr>
   <div id="general">
-    <div id= "menuIZ">
     <section id="menuD">
       <img src="imagenes/rosa.png" alt="">
       <button id="dashB">
         <img src="imagenes/icono2.png" alt=""> Dashboard
       </button>
     </section>
+<<<<<<< HEAD
     </div>
+=======
+>>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
     <section id="contenido">
       <p> Traning Centers </p>
       <div id="primeraFila" class="sectionFilas">
@@ -51,6 +49,7 @@
           <div id="buscador">
             <p>Buscar: </p>
             <input type="text" placeholder="Search" id="textU">
+<<<<<<< HEAD
             <button id="search">Search</button>
             <section id="filtrosOrder">
               <select id="filtroPorOrderBy">
@@ -68,9 +67,33 @@
                 <option value="Descendente">Descendente</option>
               </select>
             </section>
+=======
+>>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
           </div>
+          <section id="filtrosOrder">
+              <p>Filtro Por: </p>
+            <select id="filtroPorOrderBy">
+              <option value="-">Ordena Por ...</option>
+              <option value="name">Nombre</option>
+              <option value="completitud">Completitud</option>
+              <option value="ejercicios">Excercises</option>
+              <option value="lecturas">Lecturas</option>
+              <option value="quizzes">Quizzes</option>
+              <option value="quizzesScore">Quizzes-Score</option>
+            </select>
+            <select id="filtroPorDirection" disabled>
+              <option value="-">Direccion ...</option>
+              <option value="Ascendente">Ascendente</option>
+              <option value="Descendente">Descendente</option>
+            </select>
+          </section>
+        </div>
+        <div id="listStudents">
+          <table id="tablaUsers"></table>
+        </div>
       </div>
     </div>
+<<<<<<< HEAD
   </div >
 
   </div>
@@ -78,4 +101,11 @@
 <script src="data.js"></script>
 <script src="main.js"></script>
 </body>
+=======
+  </div>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
+>>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
 </html>

@@ -23,7 +23,7 @@ const procesandoData = ((users, progress, cohorts) => {
 	options.cohortData.progress = progress;
 	options.orderBy = "name";
 	options.orderDirection = "Ascendente";
-	options.search = "";
+	options.search = " ";
 	return processCohortData(options);
 })
 const getAllData = (cb) => {

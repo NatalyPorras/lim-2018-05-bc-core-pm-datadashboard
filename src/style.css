@@ -2,6 +2,7 @@
 body{
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
 }
 @media only screen and (max-width: 1824px) {
     select{
@@ -246,6 +247,213 @@ body{
         box-shadow: inset 0 0 0 3px #e6e6e6;
     }
     
+=======
+    background: #ffe521;
+
+}
+header{
+    padding: 5px;
+    background-color: #000000;
+}
+#select{
+    font-family: "Bitter";
+    color : black;
+}
+img{
+    height: 50px;
+    margin: 5px 20px;
+}
+hr{
+    margin: 0;
+    padding: 0;
+}
+/* cntenido */
+#general{
+    font-family: "Bitter";
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+
+}
+/* menuIzquierdo */
+#menuD{
+    display: inline-block;
+    padding: 20px;
+    right: 10px;    
+    width: 25%;
+}
+
+#menuD img{
+width: 50%;
+height: 50%;
+margin: 10px;   
+
+}
+#dashB { 
+    padding: 10px 35px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    background: #ffffff;
+    border-radius: 5%;
+    transition: all 500ms ease;
+    font-family:"Bitter";
+    width: 15vw;
+    font-size: 1.2vw;
+    
+}
+#dashB img{
+    display: block;
+    width: 4.5vw;
+    margin: 0 15px;
+    
+}
+#dashB:hover { 
+    background:#FF009E;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 3px #FF009E;
+}
+#curso{ 
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background: #ffffff;
+    border-radius: 5%;
+    transition: all 500ms ease;
+    font-family:"Bitter";;
+    width: 15vw;
+    font-size: 1.2vw;
+}
+#curso img{
+    display: block;
+    width: 4.5vw;
+    margin: 0 34px;
+}
+#curso:hover { 
+    background:#FF009E;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 3px #FF009E; 
+}
+
+
+/* contenidDerecho */
+#contenido{
+    left: 16%;
+    position: absolute;
+    display: inline-block;
+    width: 100vw;
+    top:65px;
+}
+
+#contenido p{
+    text-align: center;
+    font-size: 50px;
+    color: #000000;
+    font-family: "Bitter";
+    width: 80vw;
+}
+.sectionFilas {
+    border-width: 0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.centers{
+    border-width: 0;
+    width: 40%;
+    font-size: 30px;
+    padding: 20px 0;
+    background:#E64C65;
+    font-family:"Bitter";
+    border-radius:10px;
+    color: white;
+    width: 30vw;
+}
+.centers:hover { 
+    background:#FF009E;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 3px #FF009E;
+}
+#selectCenters{
+    position: absolute;
+    top:105px;
+    left: 16%;
+    width: 83vw;
+    height: 500px;
+    
+}
+#selectCenters p {
+    position: absolute;
+    left: 16%;
+    width: 83vw;
+    height: 500px;
+    font-family:"Bitter";
+    font-size: 30px;
+}
+#selectCenters select{
+    position: absolute;
+    top:95px;
+    left: 16%;
+    font-size: 20px;
+    font-family:"Bitter";
+    width: 50vw;
+}
+#contenidoData{
+    position: absolute;
+    top:65px;
+    left: 16%;
+    width: 83%;
+    height: 500px;
+}
+#filtroPorOrderBy{
+    margin-bottom: 60px;
+    
+}
+#chooseFilter{
+    display: block;
+    margin:10px 0 5px 0;
+    border-width: 0;
+    font-family:"Bitter";
+    font-size: 15px;
+ }
+#filtros{
+   background-color:  #d9d9d9   ;
+   border-width: 0;
+   justify-content: space-around;
+}
+#filtros select{
+    border-width: 0;
+    width: 30%;
+    font-size: 20px;
+    padding: 10px 0;
+    font-family:"Bitter";
+}
+#contenidoFiltros{
+    position: absolute;
+    top:65px;
+    left: 16%;
+    width: 83%;
+    height: 500px;
+}
+#buscador{
+   border-radius: 5px;
+    margin: -80px;
+    padding-left: 600px;
+}
+#tablaUsers{
+    width: 50vw;
+}
+#textU{
+    width: 15vw;
+}
+filtroPorOrderBy{
+width: 15vw;
+}
+#buscador p{
+    display: inline-block;
+    margin: 0 2px 0 0; 
+    padding: 8%;
+>>>>>>> 9d5226314c4dc03b2c005c5ff99f647d59618238
     
 }
 
@@ -494,3 +702,8 @@ body{
     
     
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9d5226314c4dc03b2c005c5ff99f647d59618238

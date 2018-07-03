@@ -151,24 +151,35 @@ desarrollar tu producto (Tip: entrevistas) y cuál fue tu proceso para definir
 el producto final a nivel de experiencia y de interfaz. Es importante que
 detalles:
 
-* Quiénes son los principales usuarios de producto.
-* Cuáles son los objetivos de estos usuarios en relación con el producto.
-* Cuáles son los datos más relevantes que quieren ver en la interfaz y
-  por qué. Cómo los descubriste.
-* Cuándo revisan normalmente estos datos los usuarios.
-* Cómo crees que el producto les está resolviendo sus problemas.
-* Cómo fue tu proceso de diseño.
+1.- Quiénes son los principales usuarios de producto: 
+    Los principales usuarios a determinar la funcionalidad y el "ok" del producto son los jedas, y como la principal para validar Ale
+2.- Cuáles son los objetivos de estos usuarios en relación con el producto: 
+    El objetivo del producto es visualizar las estadisticas de avance de las alumnas.
+3.- Cuáles son los datos más relevantes que quieren ver en la interfaz y
+    por qué. Cómo los descubriste.:
+    Para ello se tuvo una entrevista con la usuaria principal(Ale) quien valida los dato que se deben visualizar en la pantalla y que deben ser primordiales y relevantes para ella.
+3.- Cuándo revisan normalmente estos datos los usuarios: 
+    Cuando necesite ver los detalles de avance en los temas de las alumnas
+4.- Cómo crees que el producto les está resolviendo sus problemas:
+    Brinda un amplio contexto de visualización de resultados, asimismo te permite buscar por nombre a las alumnas y filtrarlas dependiendo a lo que solicite (nombre, ejercicios completados, lecturas completadas, quizzes completados y score)
+5.- Cómo fue tu proceso de diseño:
+  Graias a la entrevista con la usuario se pudo obtener un diseño factible llegando al alcance de la vision de usuario.
 
 #### 2) Sketch de la solución (prototipo de baja fidelidad)
 
-Debes hacer un _sketch_ (boceto) de tu solución usando papel y lápiz, tomarle
-una foto, subirla a tu repositorio y hacer mención del _sketch_ en tu `README.md`.
+![img_20180702_140217042](https://user-images.githubusercontent.com/21071476/42186191-43f7e844-7e11-11e8-94a7-ddfeda2e61cb.jpg)
+![img_20180702_140211864](https://user-images.githubusercontent.com/21071476/42186192-4436c168-7e11-11e8-8512-952637a73e63.jpg)
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 Diseño de un prototipo de alta fidelidad.
 https://www.figma.com/file/RfzFOq6mLCaLfM8UjKE2vdzr/DATA-DASHBOARD?node-id=32%3A60
 
+<<<<<<< HEAD
 El diseño presenta una ideal ejecucion y solucion del problema, con un tiempo accesible para el desarrollo es lo que se deberia esperar.
+=======
+Se brinda un prototipado fiable, esto se llegaria a cumplir con un tiempo viable para codear
+https://www.figma.com/proto/RfzFOq6mLCaLfM8UjKE2vdzr/DATA-DASHBOARD?scaling=scale-down&node-id=50%3A2
+>>>>>>> 9d5226314c4dc03b2c005c5ff99f647d59618238
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 

@@ -1,4 +1,3 @@
-// Dclaracion de las variables
 const btnLima = document.getElementById("cLima");
 const btndashB = document.getElementById("dashB");
 const btnfiltro = document.getElementById("filtroPor");
@@ -59,7 +58,7 @@ btnLima.addEventListener("click", () => {
 		})
 		.catch(error =>
 			console.error('Error: Nat algo haces mal', error));
-	document.getElementById('sedes').style.display = "none";
+	document.getElementById('contenido').style.display = "none";
 	document.getElementById('selectCenters').style.display = "block";
 })
 cohortsSelect.addEventListener("change", (e) => {
@@ -68,15 +67,6 @@ cohortsSelect.addEventListener("change", (e) => {
 		getAllData((cohorts, users, progress) => {
 			let celda = '';
 			celda += '<tr id="cabecera">' +
-<<<<<<< HEAD
-						'<th> NAME </th>' +
-						'<th> COMPLETITUD </th>' +
-						'<th> EJERCICIO </th>' +
-						'<th> LECTURAS </th>' +
-						'<th colspan="2"> QUIZZES </th>' +
-
-					'</tr>'
-=======
 				'<th> NAME </th>' +
 				'<th> COMPLETITUD </th>' +
 				'<th> EJERCICIO </th>' +
@@ -84,26 +74,17 @@ cohortsSelect.addEventListener("change", (e) => {
 				'<th> QUIZZES </th>' +
 				'<th> QUIZZESSCORE </th>' +
 				'</tr>'
->>>>>>> 9d5226314c4dc03b2c005c5ff99f647d59618238
 			filteredCohorts = cohorts.filter(item => { return item.id === e.target.value });
 			procesandoData(users, progress, filteredCohorts[0]);
 			let usersWithStats = processCohortData(options);
 			usersWithStats.forEach((user) => {
 				celda += '<tr id="cuerpoData">' +
-<<<<<<< HEAD
-					'<td>' + user.name.toUpperCase()+ '</td>' +
-					'<td>' + user.stats.percent + '</td>' +
-					'<td>' + user.stats.exercises.percent + '</td>' +
-					'<td>' + user.stats.reads.percent + '</td>' +
-					'<td>' + user.stats.quizzes.percent +'</td>' +
-=======
 					'<td>' + user.name.toUpperCase() + '</td>' +
 					'<td>' + user.stats.percent + '</td>' +
 					'<td>' + user.stats.exercises.percent + '</td>' +
 					'<td>' + user.stats.reads.percent + '</td>' +
 					'<td>' + user.stats.quizzes.percent + '</td>' +
 					'<td>' + user.stats.quizzes.scoreAvg + '</td>' +
->>>>>>> 9d5226314c4dc03b2c005c5ff99f647d59618238
 					'</tr>';
 			})
 			dataStudents.innerHTML = celda;
@@ -134,13 +115,10 @@ selectOrderBy.addEventListener("change", () => {
 			'<th> QUIZZESSCORE </th>' +
 			'</tr>'
 			let contenido=selectOrderBy.value;
-
 			options.orderBy = contenido;
-
 			// console.log(contenido)
 			let usersWithStats = processCohortData(options)
-			
-		if (selectOrderBy.value === "name" ) {
+		if (selectOrderBy.value === "name") {
 			usersWithStats.forEach((user) => {
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
@@ -185,9 +163,6 @@ selectOrderBy.addEventListener("change", () => {
 		}
 		if (selectOrderBy.value === "lecturas") {
 			usersWithStats.forEach((user) => {
-
-				sortUsers(usersWithStats, selectOrderBy.value, "Ascendente");
-
 				celda += '<tr id="cuerpoData">' +
 					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
 					'<td>' + user.name.toUpperCase() + '</td>' +
@@ -240,46 +215,12 @@ selectDirection.addEventListener("change", () => {
 		'<th> EJERCICIO </th>' +
 		'<th> LECTURAS </th>' +
 		'<th> QUIZZES </th>' +
-<<<<<<< HEAD
-		'</tr>'
-
-=======
 		'<th> QUIZZESSCORE </th>' +
 		'</tr>'
->>>>>>> 9d5226314c4dc03b2c005c5ff99f647d59618238
 		let contenido=selectDirection.value;
 		options.orderDirection = contenido;
 		// console.log(contenido)
 		let usersWithStats = processCohortData(options)
-<<<<<<< HEAD
-			
-		if (selectDirection.value === "Ascendente") {
-			usersWithStats.forEach((user) => {
-				celda += '<tr id="cuerpoData">' +
-					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-					'<td>' + user.name.toUpperCase() + '</td>' +
-					'<td>' + user.stats.percent + '</td>' +
-					'<td>' + user.stats.exercises.percent + '</td>' +
-					'<td>' + user.stats.reads.percent + '</td>' +
-					'<td>' + user.stats.quizzes.percent + '</td>' +
-					'</tr>';
-			})
-		}
-		if (selectDirection.value === "Descendente") {
-			usersWithStats.forEach((user) => {
-				celda += '<tr id="cuerpoData">' +
-					// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-					'<td>' + user.name.toUpperCase() + '</td>' +
-					'<td>' + user.stats.percent + '</td>' +
-					'<td>' + user.stats.exercises.percent + '</td>' +
-					'<td>' + user.stats.reads.percent + '</td>' +
-					'<td>' + user.stats.quizzes.percent + '</td>' +
-					'</tr>';
-			})
-		}
-		
-
-=======
 	if (selectDirection.value === "Ascendente") {
 		usersWithStats.forEach((user) => {
 			celda += '<tr id="cuerpoData">' +
@@ -306,7 +247,6 @@ selectDirection.addEventListener("change", () => {
 				'</tr>';
 		})
 	}
->>>>>>> 9d5226314c4dc03b2c005c5ff99f647d59618238
 
 	dataStudents.innerHTML = celda;
 
@@ -330,7 +270,7 @@ textUser.addEventListener("keyup", () => {
 
 			celda += '<tr id="cuerpoData">' +
 				// '<td id= "nombrestabla"><a href="">' + user.id + '</a></td>'+
-				'<td>' + user.name.toUpperCase() + '</td>' +
+				'<td>' + user.name + '</td>' +
 				'<td>' + user.stats.percent + '</td>' +
 				'<td>' + user.stats.exercises.percent + '</td>' +
 				'<td>' + user.stats.reads.percent + '</td>' +
@@ -338,7 +278,6 @@ textUser.addEventListener("keyup", () => {
 				'<td>' + user.stats.quizzes.scoreAvg + '</td>' +
 				'</tr>';
 		})
-
 		dataStudents.innerHTML = celda;
 
 })

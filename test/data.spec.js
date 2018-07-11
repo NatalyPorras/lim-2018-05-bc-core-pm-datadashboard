@@ -194,119 +194,22 @@ describe('data', () => {
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
     const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
-    const courses = Object.keys(cohort.coursesIndex);
-<<<<<<< HEAD
-    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter',()=>{
-    //   const usersFiler= fixtures.users
-    //  const progressFilter=fixtures.progress 
-    //   let options = {
-    //     cohort: courses,
-    //     cohortData: {
-    //       users: usersFiler,
-    //       progress: progressFilter
-    //     },
-    //     orderBy: 'completitud',
-    //     orderDirection: 'Ascendente',
-    //     search: 'Lizeth'
-    //   }
-
-    //   const result = processCohortData(options);
-    //   assert.isObject((result));
-    //   const userFinal = {
-    //     id: "00hJv4mzvqM3D9kBy3dfxoJyFV82",
-    //     locale: "es-ES",
-    //     name: "Lizeth",
-    //     role: "student",
-    //     signupCohort: "lim-2018-03-pre-core-pw",
-    //     stats: {
-    //       percent: 53,
-    //       exercises: {
-    //         completed: 0,
-    //         percent: 0,
-    //         total: 2
-    //       },
-    //       reads: {
-    //         completed: 6,
-    //         percent: 55,
-    //         total: 11,
-    //       },
-          
-    //       quizzes: {
-    //         completed: 2,
-    //         percent: 67,
-    //         scoreAvg: 29,
-    //         scoreSum: 57,
-    //         total: 3
-    //       }
-
-    //     }
-
-    //   }
-    //   if ((typeof userFinal === 'object' )&& (typeof courses === 'object')) {
-    //     assert.equal(result[0].name, userFinal.name)
-    //   }
-    });
-    it('debería retornar un objeto',()=>{
-      const usersFiler= fixtures.users
-     const progressFilter=fixtures.progress 
-     
-      const userFinal = {
-        id: "00hJv4mzvqM3D9kBy3dfxoJyFV82",
-        locale: "es-ES",
-        name: "Lizeth",
-        role: "student",
-        signupCohort: "lim-2018-03-pre-core-pw",
-        stats: {
-          percent: 53,
-          exercises: {
-            completed: 0,
-            percent: 0,
-            total: 2
-          },
-          reads: {
-            completed: 6,
-            percent: 55,
-            total: 11,
-          },
-          
-          quizzes: {
-            completed: 2,
-            percent: 67,
-            scoreAvg: 29,
-            scoreSum: 57,
-            total: 3
-          }
-
-        }
-
-      }
-      const options = {
-=======
     const { users, progress } = fixtures;
     it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter', () => {
 
       // ------------------------------------------------------------------------------------------------------------
 
-
       let opt = {
->>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
-        cohort: courses,
+        cohort: cohort,
         cohortData: {
-          users: usersFiler,
-          progress: progressFilter
+          users: users,
+          progress: progress
         },
         orderBy: 'completitud',
         orderDirection: 'Ascendente',
         search: 'Lizeth'
       }
 
-<<<<<<< HEAD
-     const  result = processCohortData(options);
-      assert.isObject(userFinal);
-      assert.isObject(result);
- 
-    });
-=======
       const result = processCohortData(opt);
 
       const userFinal = {
@@ -344,7 +247,6 @@ describe('data', () => {
     });
 
 
->>>>>>> 4aa76e2ce81901bf32ac1603a9f4bb852cd405e9
 
   });
 

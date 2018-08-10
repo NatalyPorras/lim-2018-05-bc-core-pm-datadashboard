@@ -6,6 +6,9 @@
  
  #wrapper {
     padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     overflow: hidden;
  }
@@ -24,8 +27,8 @@
     margin-left: -250px;
     overflow-y: auto;
     background: #000;
-
     transition: all 0.5s ease;
+    display: none;
  }
  
  #wrapper.toggled #sidebar-wrapper {
@@ -54,8 +57,7 @@
  /* Sidebar Styles */
  
  .sidebar-nav {
-    position: absolute;
-    top: 0;
+    position: fixed;
     width: 250px;
     margin: 0;
     padding: 0;
@@ -117,6 +119,8 @@
     }
     #sidebar-wrapper {
        width: 250px;
+       display: none;
+       position: fixed;
     }
     #wrapper.toggled #sidebar-wrapper {
        width: 250px;
@@ -130,6 +134,9 @@
     #page-content-wrapper {
        padding: 20px;
        position: relative;
+       -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
        transition: all 0.5s ease;
     }
     #wrapper.toggled #page-content-wrapper {
@@ -141,7 +148,21 @@
        position: relative;
        margin-right: 0;
        margin-left: -200px;
+       -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
        transition: all 0.5s ease;
        width: auto;
     }
+    .navbar-nav{
+      display: none;
+    }
  }
+
+ @media only screen and (min-width: 992px) {
+    #sidebar-wrapper {
+      display: block;
+      position: fixed;
+    }
+  
+  }

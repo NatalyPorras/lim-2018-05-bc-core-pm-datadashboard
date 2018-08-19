@@ -3,7 +3,13 @@
  .nav-pills>li>a {
     border-radius: 0;
  }
- 
+ .navbar-brand>img{
+   width: 200px;
+   height: 50px;
+ }
+ .navbar-brand{
+   padding: 2px 2px;
+ }
  #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -119,7 +125,7 @@
     }
     #sidebar-wrapper {
        width: 250px;
-       display: none;
+       display: block;
        position: fixed;
     }
     #wrapper.toggled #sidebar-wrapper {
@@ -156,6 +162,9 @@
     }
     .navbar-nav{
       display: none;
+    }
+    .navbar{
+      border-radius: 0;
     }
  }
 

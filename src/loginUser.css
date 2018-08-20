@@ -17,30 +17,35 @@ header{
 }
 .general{
     width: 100%;
-    padding: 2px 0;
+    height: 86%;
+    padding: 1% 0;
     text-align: center;
+    background: #ffE521;
 }
 
 h2{
     font-family: 'Bitter-Regular';
     font-size: 40px;
-    margin: 5% 0;
+    margin: 1% 0;
 }
 .contentTotal{
     width: 100%;
-    display: flex;
 }
 .mapVideo{
-    width: 40%;
-    margin: 2% 0;
+    width: 30%;
+    float: left;
+    left: 5px;
+    position: absolute;
+    top: 65%;
 }
 video{
     width: 100%;
 }
 .text{
-    width: 59%;
-    height: 400px;
-    margin: 2% 0;
+    width: 70%;
+    margin: 1% auto;
+    padding: 2% 0;
+    background: white;
 }
 .imagenPerfil{
     width: 100%;
@@ -53,6 +58,7 @@ height: 150px;
 border-radius: 75px;
 }
 p{
+    margin: 2% 0;
     font-size: 18px;
     text-align: center;
     font-family: 'Bitter-Regular';
@@ -60,4 +66,9 @@ p{
 button{
     width: 100px;
     height: 50px;
+}
+
+
+.btn-outline-warning {
+    color: #212529;
 }

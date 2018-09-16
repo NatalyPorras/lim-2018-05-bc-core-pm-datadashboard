@@ -206,6 +206,11 @@ body{
         font-size: 14px;
         border: 2px solid #FF009E;
     }
+    #cajaGeneral{
+        width: 160px;
+        margin: 5px 0;
+        background-color: red;
+    }
 }
 @media all and (max-width: 360px) {
     header{

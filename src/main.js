@@ -66,6 +66,7 @@ const createCuadroAlumnos=(usersWithStats)=>{
 	usersWithStats.forEach((user) => {
 	celda += 
 	`
+<<<<<<< HEAD
 	<div>
 		'<h3>' + ${user.name.toUpperCase()} + '</p>' +
 		'<p>' + ${user.stats.percent} + '</p>' +
@@ -73,6 +74,15 @@ const createCuadroAlumnos=(usersWithStats)=>{
 		'<p>' + ${user.stats.reads.percent} + '</p>' +
 		'<p>' + ${user.stats.quizzes.percent} + '</p>' +
 		'<p>' + ${user.stats.quizzes.scoreAvg} + '</p>' +
+=======
+	<div id="cajaGeneral">
+		<h3>${user.name.toUpperCase()}</h3>
+		<p>${user.stats.percent}</p>
+		<p>${user.stats.exercises.percent}</p>
+		<p>${user.stats.reads.percent}</p> 
+		<p>${user.stats.quizzes.percent}</p>
+		<p>${user.stats.quizzes.scoreAvg}</p>
+>>>>>>> fad96ddfca57088ebee52703fdd3a84e6b4d9998
 	<div>
 	`
 })
@@ -126,9 +136,11 @@ selectOrderBy.addEventListener("change", () => {
 		if (selectOrderBy.value === "quizzesScore") {
 			createCuadroAlumnos(usersWithStats);
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> fad96ddfca57088ebee52703fdd3a84e6b4d9998
 		selectDirection.disabled=false;
-	
 })
 selectDirection.addEventListener("change", () => {
 

@@ -31,7 +31,7 @@
  }
  .navbar-brand{
    padding: 1px 2px;
-   display: none;
+   display: block;
  }
  .navbar-toggle {
   position: relative;
@@ -220,7 +220,7 @@
 
  @media only screen and (min-width: 992px) {
     #sidebar-wrapper {
-      display: block;
+      display: block !important;
       position: fixed;
     }
   

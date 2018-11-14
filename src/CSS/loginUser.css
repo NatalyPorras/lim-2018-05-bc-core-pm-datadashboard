@@ -1,0 +1,167 @@
+html,
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* ----------- Header ------------- */
+
+header{
+    background: #000000;
+    width: 100%;
+    height: 10%; 
+    text-align: center;
+}
+#logo{
+    width: 95%;
+    height: 50px;
+    margin: 3.5px auto
+}
+
+/*  ------------- Contenido ------------------ */
+ .general{
+    height: 90%;
+    background: #ffE521;
+}
+h2{
+    font-family: 'Bitter-Regular';
+    font-size: 26px;
+    margin: 5px 0;
+}
+
+.text{
+    width: 90%;
+    margin: 5% auto 30%;
+    padding: 5% 0 6%;
+    background: white;
+}
+ 
+.imagenPerfil{
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+}
+#photo{
+    width: 100%;
+    height: 50%;
+    border-radius: 140px;
+}
+
+p{
+    width: 80%;
+    margin: 0.5% auto 0;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Bitter-Regular';
+}
+
+.mapVideo{
+    float: left;
+    width: 60%;
+    position: absolute;
+    width: 60%;
+    bottom: 0;
+    left: 5px;
+    border: 2px solid #ffc107;
+    box-shadow: 0px 0px 10px 2px #ffc107 ;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+}
+
+button{
+    width: 100px;
+}
+
+.btn {
+    display: block;
+    margin: 2% auto 10%;
+}
+.btn-outline-warning {
+    color: #212529;
+} 
+
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (min-width: 768px) {  
+   
+    #logo{
+        width: 50%;
+        height: 45px;
+        margin: 3.5px auto
+    }
+    h2{
+        font-size: 30px;
+        margin: 10px 0 5px;
+    }
+    
+    .text{
+        width: 82%;
+        margin: 2% auto 20%;
+        padding: 2% 0 3%;
+    }
+    .imagenPerfil{
+        width: 25%;
+    }
+    #photo{
+        width: 100%;
+    }
+    
+    p{
+        width: 80%;
+        margin: 2% auto 0;
+        font-size: 15px;
+    }
+    
+    .mapVideo{
+        float: left;
+        width: 40%;
+        position: absolute;
+        bottom: 0;
+        left: 5px;
+       
+    }
+    .btn {
+        margin: 2% auto;
+    }
+    
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (min-width: 992px) { 
+    #logo{
+        width: 40%;
+        height: 60px;
+        margin: 4px auto
+    }
+     h2{
+        font-size: 35px;
+    }
+    
+    .text{
+        width: 55%;
+        margin: 2% auto 13%;
+        padding: 2% 0 3%;
+    }
+    .imagenPerfil{
+        width: 22%;
+    }
+    
+    p{
+        width: 65%;
+        font-size: 16px;
+    }
+    
+    .mapVideo{
+        width: 35%;
+        left: 0;
+        
+    }
+
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (min-width: 1200px) {  }

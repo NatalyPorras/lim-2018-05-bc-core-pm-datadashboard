@@ -1,125 +1,80 @@
 window.computeUsersStats = (users, progress, courses) => {
+  console.log(users);
+  
   let datoLectura = 0, datoGeneralLectura = 0;
   let datoQuiz = 0, datoGeneralQuiz = 0;
   let datoEjercicio = 0, datoGeneralEjercicio = 0;
   let progressTotalQuiz = 0; calcularEjercicio = 0, calcularLectura = 0, calcularQuiz = 0, QuizzeProgress = 0;
 
-   let usersWithStats= users.map((user) => {
-    const userId = user.id;
-    const userProgress = progress[userId];
-    const course=courses.toString();
-    if (userProgress && userProgress.hasOwnProperty(course) && userProgress.intro.hasOwnProperty('units')) {
-      const units = userProgress.intro.units;
-      const progressTotal = Object.keys(units).reduce((sumProgress, unit) => {
-        return sumProgress + units[unit].percent;
-      }, 0)
-      userProgressPercent = Math.round(progressTotal / Object.keys(units).length);
-      for (let value in units) {
-        const parts = units[value].parts;
-        for (const part in parts) {
-          // Calcular datos de Ejercicios
-          const exercises = parts[part].exercises;
-          for (const exercise in exercises) {
-            if (exercises[exercise].hasOwnProperty("completed")) {
-              datoGeneralEjercicio++;
-              if (exercises[exercise].completed === 1) {
-                datoEjercicio++;
-              } 
-            }
-          }
-          // Validacion de resultados de Ejercicios
-          if (datoEjercicio === 0) {
-            calcularEjercicio = 0;
-          } else {
-            calcularEjercicio = Math.round((datoEjercicio * 100) / datoGeneralEjercicio);
-          }
+  const userStudents = users.filter(student => student.role === "student")
 
-          // Calcular datos de lectura
-          if (parts[part].type === "read") {
-            if (parts[part].completed === 1) {
-              datoLectura++;
-            } 
-            datoGeneralLectura++;  // console.log(datoGeneral);
-          }
-          // Calcular datos de Preguntas
-          if (parts[part].type === "quiz") {
-            if (parts[part].completed === 1 && parts[part].hasOwnProperty("score")) {
-              progressTotalQuiz += parts[part].score;
-              datoQuiz++;
+  let usersWithStats = userStudents.map(user => {
+    let userId = user.id;
+    let userProgress = progress[userId];
+
+    courses.map(course => {
+      if (userProgress.hasOwnProperty(course)) {
+        const units = userProgress[course].units;
+        const progressTotal = Object.keys(units).reduce((sumProgress, unit) => {
+          return sumProgress + units[unit].percent
+        }, 0)
+        userProgressPercent = Math.round(progressTotal / Object.keys(units).length);
+
+        Object.entries(units).map(unit => {
+          Object.entries(unit[1].parts).map(part => {
+            const exercises = part[1].exercises;
+            for (const exercise in exercises) {
+              if (exercises[exercise].hasOwnProperty("completed")) {
+                datoGeneralEjercicio++;
+                if (exercises[exercise].completed === 1) {
+                  datoEjercicio++;
+                }
+              }
             }
-            datoGeneralQuiz++;
-          }
-        }
-        // Validacion de resultados de Preguntas con score
-        if (datoGeneralQuiz === 0) {
-          calcularQuiz = 0;
-        } else {
-          calcularQuiz = Math.round((datoQuiz / datoGeneralQuiz) * 100);
-        }
-        if (datoQuiz === 0) {
-          QuizzeProgress = 0;
-        } else {
-          QuizzeProgress = Math.round(progressTotalQuiz / datoQuiz);
-        }
-        // Validacion de resultados de Lecturas
-        if (datoGeneralLectura === 0) {
-          calcularLectura = 0;
-        } else {
-          calcularLectura = Math.round((datoLectura / datoGeneralLectura) * 100);
-        }
+            if (part[1].type === "read") {
+              if (part[1].completed === 1) {
+                datoLectura++;
+              }
+              datoGeneralLectura++;
+            }
+            if (part[1].type === "quiz") {
+              if (part[1].completed === 1 && part[1].hasOwnProperty("score")) {
+                progressTotalQuiz += part[1].score;
+                datoQuiz++;
+              }
+              datoGeneralQuiz++;
+            }
+          })
+        })
       }
-      user.stats = {
-        percent: userProgressPercent,
-        exercises: {
-          total: datoGeneralEjercicio,
-          completed: datoEjercicio,
-          percent: calcularEjercicio
-        },
-        reads: {
-          total: datoGeneralLectura,
-          completed: datoLectura,
-          percent: calcularLectura
-        },
-        quizzes: {
-          total: datoGeneralQuiz,
-          completed: datoQuiz,
-          percent: calcularQuiz,
-          scoreSum: progressTotalQuiz,
-          scoreAvg: QuizzeProgress
-        }
-  
-      }
-    }else {
-      user.stats = {
-        percent: 0,
-        exercises: {
-          total: 0,
-          completed: 0,
-          percent: 0
-        },
-        reads: {
-          total: 0,
-          completed: 0,
-          percent: 0
-        },
-        quizzes: {
-          total: 0,
-          completed: 0,
-          percent: 0,
-          scoreSum: 0,
-          scoreAvg: 0
-        }
-  
+
+    })
+    user.stats = {
+      percent: userProgressPercent,
+      exercises: {
+        total: datoGeneralEjercicio,
+        completed: datoEjercicio,
+        percent: calcularEjercicio
+      },
+      reads: {
+        total: datoGeneralLectura,
+        completed: datoLectura,
+        percent: calcularLectura
+      },
+      quizzes: {
+        total: datoGeneralQuiz,
+        completed: datoQuiz,
+        percent: calcularQuiz,
+        scoreSum: progressTotalQuiz,
+        scoreAvg: QuizzeProgress
       }
     }
-    return user;
-
-  });
-console.log(usersWithStats)
+    return user
+  })
   return usersWithStats;
 };
 
-window.sortUsers = (users, orderBy, orderDirection) => {
+ window.sortUsers = (users, orderBy, orderDirection) => {
   if (orderBy === "name" && orderDirection === "Ascendente") {
     users.sort((primerD, segundoD) => {
       if (primerD.name > segundoD.name) {
@@ -177,19 +132,19 @@ window.sortUsers = (users, orderBy, orderDirection) => {
   }
   return users;
 };
-window.filterUsers = (users, search) => {
+ window.filterUsers = (users, search) => {
   return users.filter((user) => {
     return user.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
   })
-}
+} 
 window.processCohortData = (options) => {
-  let arrC = Object.keys(options.cohort.coursesIndex);
-  let computeUser = computeUsersStats(options.cohortData.users, options.cohortData.progress, arrC);
+  let arrayCourses = Object.keys(options.cohort[0].coursesIndex);
+  let computeUser = computeUsersStats(options.cohortData.users, options.cohortData.progress, arrayCourses);
   let sortUserWithCompute = sortUsers(computeUser, options.orderBy, options.orderDirection);
   if (options.search !== " ") {
     let filterUsersWithSort = filterUsers(sortUserWithCompute, options.search);
     return filterUsersWithSort
   }
-  return sortUserWithCompute;
+  return computeUser;
 
 };

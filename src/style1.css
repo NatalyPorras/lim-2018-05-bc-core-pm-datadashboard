@@ -1,22 +1,16 @@
  /* Toggle Styles */
- 
- .nav-pills>li>a {
-    border-radius: 0;
+ .navbar {
+   position:fixed;
+   width: 100%;
+   background-color: #ffffff;
+   z-index: 1000;
  }
- .nav-pills > li.active > a{
+ .main{
+  background-image: url(./imagenes/mapa.png);
+  height: 100vh;
+  background-size: cover
+}
 
-  color: #999999;
-  background-color:transparent;
-}
-.nav-pills > li.active > a:hover {
-  color: #000000;
-  background-color:#ffe521;
-}
-.nav-pills>li.active>a:focus{
-  color: #999999;
-  background-color:#ffe521;
-  transition-duration: 2ms;
-}
 
 .sidebar-nav li a:hover {
   text-decoration: none;
@@ -25,20 +19,19 @@
   border-left: white 2px solid;
 }
  .navbar-brand>img{
-   width: 85%;
    height: 30px;
    margin: 3% auto;
  }
  .navbar-brand{
    padding: 1px 2px;
-   display: block;
- }
- .navbar-toggle {
+
+  }
+ /* .navbar-toggle {
   position: relative;
   float: left;
   padding: 9px 10px;
  margin: 1.5% 2%;
-}
+} */
  #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -50,10 +43,12 @@
  
  #wrapper.toggled {
     padding-left: 250px;
-    overflow: hidden;
+    /* overflow: hidden; */
  }
  
  #sidebar-wrapper {
+   
+  top: 10%;
     z-index: 1000;
     position: absolute;
     left: 250px;
@@ -65,15 +60,19 @@
     transition: all 0.5s ease-in;
     display: none;
  }
- 
+ .fa-sign-out-alt{
+  color : rgb(230,0,126)
+ }
  #wrapper.toggled #sidebar-wrapper {
     width: 250px;
  }
  
  #page-content-wrapper {
-    position: absolute;
     padding: 15px;
     width: 100%;
+    display: none;
+    width: 100%;
+    margin-top:20%;
     overflow-x: hidden;
  }
  
@@ -159,6 +158,115 @@
   margin: 0.5% auto;
   font-size: 30px;
 }
+.main{
+  
+  top: 10%;
+}
+.contentTotalDatos{
+  display: flex;
+  width: 60%;
+  margin: 0.5% auto;
+  padding: 1%;
+  justify-content: space-around;
+  border: 2px solid #F0F0F0;
+}
+.contentTotalCohort{
+  text-align: center;
+  padding: 2% 4%;
+  background-color: #E5E5E5;
+  border: 2px solid #F0F0F0;
+}
+
+.contentTotalCohort h5{
+  font-size: 15px;
+  font-weight: 600
+}
+.contentTotalCohort h3{
+  font-size: 20px;
+}
+.contentTotalCourses{
+  text-align: center;
+  padding: 2% 4%;
+  background-color: #E5E5E5;
+  border: 2px solid #F0F0F0;
+}
+
+.contentTotalCourses h5{
+  font-size: 15px;
+  font-weight: 600
+}
+.contentTotalCourses h3{
+  font-size: 20px;
+}
+
+.contentCohort{
+  display: flex;
+}
+.content h4{
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.optionsSelect {
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.search{
+display: block;
+margin: 0.5%;
+}
+.searchStyle{
+  display: inline-block;
+  width: 70%;
+  margin-left:10px;
+  height: 30px;
+  padding: 0 0 0 15px;
+  font-size: 12px;
+}
+.selectsDetails{
+  text-align: center;
+  margin: 1%;
+}
+.form-control-sm{
+  width: 80%;
+  margin: 0 auto;
+  font-size: 12px;
+  height: 25px;
+  padding: 0.5%;
+}
+.col-form-label{
+  font-size: 14px;
+}
+.form-check-label{
+  font-size: 12px;
+}
+#page-content-wrapper .btn{
+  font-size: 15px;
+  width: 85%;
+  height: 50px;
+  border-radius: 0;
+  padding: 0;
+  margin: 1% auto;
+  white-space: normal;
+}
+.content .col-12{
+  text-align: center
+}
+#page-content-wrapper .row{
+  justify-content: center
+}
+.contentCohortSelect{
+  display: none;
+  padding: 15px;
+  width: 100%;
+  margin-top:15%;
+} 
+.card{
+  text-align: center;
+}
+.card img{
+  width: 30%;
+}
  @media(min-width:768px) {
     #wrapper {
        padding-left: 250px;
@@ -183,29 +291,7 @@
     #wrapper.toggled-2 #sidebar-wrapper:hover {
        width: 250px;
     }
-    #page-content-wrapper {
-       padding: 20px;
-       position: relative;
-       -webkit-transition: all 0.5s ease;
-       -moz-transition: all 0.5s ease;
-       -o-transition: all 0.5s ease;
-       transition: all 0.5s ease;
-    }
-    #wrapper.toggled #page-content-wrapper {
-       position: relative;
-       margin-right: 0;
-       padding-left: 250px;
-    }
-    #wrapper.toggled-2 #page-content-wrapper {
-       position: relative;
-       margin-right: 0;
-       margin-left: -200px;
-       -webkit-transition: all 0.5s ease;
-       -moz-transition: all 0.5s ease;
-       -o-transition: all 0.5s ease;
-       transition: all 0.5s ease;
-       width: auto;
-    }
+
     .navbar-nav{
       display: none;
     }
@@ -223,5 +309,121 @@
       display: block !important;
       position: fixed;
     }
-  
+    .main{
+      background-image: url(./imagenes/mapa.png);
+      padding-left: 15px;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top:5%;
+    }
+    #page-content-wrapper {
+      display: none;
+      padding: 15px;
+      width: 100%;
+      margin-top:5%;
+   }
+    .contentTotalDatos{
+      display: flex;
+      width: 50%;
+      margin: 0.5% auto;
+      padding: 1%;
+      justify-content: space-around;
+      border: 2px solid #F0F0F0;
+    }
+    .contentTotalCohort{
+      text-align: center;
+      padding: 2% 4%;
+      background-color: #E5E5E5;
+      border: 2px solid #F0F0F0;
+    }
+
+    .contentTotalCohort h5{
+      font-size: 20px;
+      font-weight: 600
+    }
+    .contentTotalCohort h3{
+      font-size: 25px;
+    }
+    .contentTotalCourses{
+      text-align: center;
+      padding: 2% 4%;
+      background-color: #E5E5E5;
+      border: 2px solid #F0F0F0;
+    }
+
+    .contentTotalCourses h5{
+      font-size: 20px;
+      font-weight: 600
+    }
+    .contentTotalCourses h3{
+      font-size: 25px;
+    }
+
+    .contentCohort{
+      display: flex;
+    }
+    .content h4{
+      font-size: 30px;
+      font-weight: 100;
+    }
+
+    .optionsSelect {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+    .search{
+      width: 40%;
+      padding: 1%
+    }
+    .searchStyle{
+      display: inline-block;
+      width: 80%;
+      margin-left:10px;
+      font-size: 15px
+    }
+    .selectsDetails{
+      width: 40%;
+      text-align: center;
+      margin: 1%;
+    }
+    .form-control-sm{
+      width: 75%;
+      margin: 0 auto;
+      height: 30px;
+      font-size: 15px;
+    }
+    .form-check-label{
+      font-size: 15px;
+    }
+    #page-content-wrapper .col-sm-4{
+      max-width: 31.5%;
+      margin: 0.5%;
+      border-radius: 0;
+      padding: 0;
+    }
+    #page-content-wrapper .btn{
+      font-size: 15px;
+      width: 100%;
+      height: 50px;
+      border-radius: 0;
+      padding: 0;
+      white-space: normal;
+    }
+    #page-content-wrapper .row{
+      justify-content: center
+    }
+    .contentCohortSelect{
+      display: none;
+      padding: 15px;
+      width: 100%;
+      margin-top:5%;
+    } 
+    .card{
+      text-align: center;
+    }
+    .card img{
+      width: 30%;
+    }
   }

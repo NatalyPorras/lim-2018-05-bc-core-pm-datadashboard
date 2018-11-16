@@ -205,12 +205,37 @@ const paintingUsers = (users) =>{
     cardGroup.className = "card-columns";
     users.map(user =>{
         let card = document.createElement("div");
-        let image = document.createElement("img");
-        let cardBody = document.createElement("div");
         let title = document.createElement("h5");
+        let cardBody = document.createElement("div");
+        let cardTotalData = document.createElement("div");
+        let image = document.createElement("img");
+        let partTotal = document.createElement("div");
+        let divProgess1 = document.createElement("div");
+        let titleProgress1 = document.createElement("h6");
+        let showProgress1 = document.createElement("div");
+        let showPorcent1 = document.createElement("h4")
+        let progress1 = document.createElement("div");
+        let progressBar1 = document.createElement("div");
+
+        let divProgess2 = document.createElement("div");
+        let titleProgress2 = document.createElement("h6");
+        let showProgress2 = document.createElement("div");
+        let showPorcent2 = document.createElement("h4")
+        let progress2 = document.createElement("div");
+        let progressBar2 = document.createElement("div");
+
+        let divProgess3 = document.createElement("div");
+        let titleProgress3 = document.createElement("h6");
+        let showProgress3 = document.createElement("div");
+        let showPorcent3 = document.createElement("h4")
+        let progress3 = document.createElement("div");
+        let progressBar3 = document.createElement("div");
+
         let progress = document.createElement("div");
         let progressBar = document.createElement("div");
 
+        
+        // Progress general
         progress.className = "progress";
         progressBar.className = 'progress-bar';
         progressBar.setAttribute("role", "progressbar");
@@ -218,68 +243,87 @@ const paintingUsers = (users) =>{
         progressBar.setAttribute("aria-valuenow", user.stats.percent);
         progressBar.setAttribute("aria-valuemin","0")
         progressBar.setAttribute("aria-valuemax","100")
+        // Progress general Ejercicios
+        cardTotalData.className = "cardTotalData"
+        partTotal.className = "partTotal",
+        divProgess1.className = "divProgress"
+        showProgress1.className = "showProgress"
+        progress1.className = "progress";
+        progressBar1.className = 'progress-bar';
+        progressBar1.setAttribute("role", "progressbar");
+        progressBar1.setAttribute("style", `width:${user.stats.exercises.percent}%;`);
+        progressBar1.setAttribute("aria-valuenow", user.stats.exercises.percent);
+        progressBar1.setAttribute("aria-valuemin","0")
+        progressBar1.setAttribute("aria-valuemax","100")
+
+        titleProgress1.textContent = "Ejercicios"
+
+        // Progress general lectura
+        progress2.className = "progress";
+        showProgress2.className = "showProgress"
+        divProgess2.className = "divProgress"
+        progressBar2.className = 'progress-bar';
+        progressBar2.setAttribute("role", "progressbar");
+        progressBar2.setAttribute("style", `width:${user.stats.reads.percent}%;`);
+        progressBar2.setAttribute("aria-valuenow", user.stats.reads.percent);
+        progressBar2.setAttribute("aria-valuemin","0")
+        progressBar2.setAttribute("aria-valuemax","100")
+
+        titleProgress2.textContent = "Lecturas"
+                    // Progress general lectura
+        progress3.className = "progress";
+        showProgress3.className = "showProgress"
+        divProgess3.className = "divProgress"
+        progressBar3.className = 'progress-bar';
+        progressBar3.setAttribute("role", "progressbar");
+        progressBar3.setAttribute("style", `width:${user.stats.quizzes.percent}%;`);
+        progressBar3.setAttribute("aria-valuenow", user.stats.quizzes.percent);
+        progressBar3.setAttribute("aria-valuemin","0")
+        progressBar3.setAttribute("aria-valuemax","100")
+
+        titleProgress3.textContent = "Lecturas"
 
         card.className = "card";
         cardBody.className = "card-body"
+        showPorcent1.textContent=user.stats.exercises.percent+"%"
+        showPorcent2.textContent=user.stats.reads.percent+"%" 
+        showPorcent3.textContent=user.stats.quizzes.percent +"%"
         progressBar.textContent =user.stats.percent
         image.setAttribute('src', './imagenes/mujercodeando.jpg')
         title.textContent = user.name
       
         card.appendChild(title);
-        card.appendChild(image);
         card.appendChild(cardBody);
-        progress.appendChild(progressBar)
-        cardBody.appendChild(progress);
+        cardBody.appendChild(cardTotalData);
+        cardTotalData.appendChild(image)
+        cardTotalData.appendChild(partTotal)
+        partTotal.appendChild(divProgess1)
+        partTotal.appendChild(divProgess2)
+        partTotal.appendChild(divProgess3)
+
+        divProgess1.appendChild(titleProgress1)
+        showProgress1.appendChild(showPorcent1);
+        progress1.appendChild(progressBar1)
+        showProgress1.appendChild(progress1)
+        divProgess1.appendChild(showProgress1)
+        
+        divProgess2.appendChild(titleProgress2)
+        showProgress2.appendChild(showPorcent2);
+        progress2.appendChild(progressBar2)
+        showProgress2.appendChild(progress2)
+        divProgess2.appendChild(showProgress2)
+        
+        divProgess3.appendChild(titleProgress3)
+        showProgress3.appendChild(showPorcent3);
+        progress3.appendChild(progressBar3)
+        showProgress3.appendChild(progress3)
+        divProgess3.appendChild(showProgress3)
+        // card.appendChild(image);
+        
+        // progress.appendChild(progressBar)
+        // cardBody.appendChild(progress);
         cardGroup.appendChild(card);
 
     })
     cohortSelect.appendChild(cardGroup)
 }
-
-// selectOrderBy.addEventListener("change", () => {
-
-// 			let contenido=selectOrderBy.value;
-// 			options.orderBy = contenido;
-// 			// console.log(contenido)
-// 			let usersWithStats = processCohortData(options)
-// 		if (selectOrderBy.value === "name") {
-// 			createCuadroAlumnos(usersWithStats);
-// 		}
-// 		if (selectOrderBy.value === "completitud") {
-// 			createCuadroAlumnos(usersWithStats);
-// 		}
-// 		if (selectOrderBy.value === "ejercicios") {
-// 			createCuadroAlumnos(usersWithStats);
-// 		}
-// 		if (selectOrderBy.value === "lecturas") {
-// 			createCuadroAlumnos(usersWithStats);
-// 		}
-// 		if (selectOrderBy.value === "quizzes") {
-// 			createCuadroAlumnos(usersWithStats);
-// 		}
-// 		if (selectOrderBy.value === "quizzesScore") {
-// 			createCuadroAlumnos(usersWithStats);
-// 		}
-// 		selectDirection.disabled=false;
-// })
-// selectDirection.addEventListener("change", () => {
-
-// 		let contenido=selectDirection.value;
-// 		options.orderDirection = contenido;
-// 		// console.log(contenido)
-// 		let usersWithStats = processCohortData(options)
-// 	if (selectDirection.value === "Ascendente") {
-// 		createCuadroAlumnos(usersWithStats);
-// 	}
-// 	if (selectDirection.value === "Descendente") {
-// 		createCuadroAlumnos(usersWithStats);
-// 	}
-// })
-// textUser.addEventListener("keyup", () => {
-
-// 			let contenidos=textUser.value;
-// 			options.search = contenidos;
-// 			let usersWithStats = processCohortData(options)
-// 			createCuadroAlumnos(usersWithStats);
-
-// })

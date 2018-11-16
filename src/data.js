@@ -44,6 +44,27 @@ window.computeUsersStats = (users, progress, courses) => {
               }
               datoGeneralQuiz++;
             }
+            if (datoEjercicio === 0) {
+              calcularEjercicio = 0;
+            } else {
+              calcularEjercicio = Math.round((datoEjercicio * 100) / datoGeneralEjercicio);
+            }
+            if (datoGeneralQuiz === 0) {
+              calcularQuiz = 0;
+            } else {
+              calcularQuiz = Math.round((datoQuiz / datoGeneralQuiz) * 100);
+            }
+            if (datoQuiz === 0) {
+              QuizzeProgress = 0;
+            } else {
+              QuizzeProgress = Math.round(progressTotalQuiz / datoQuiz);
+            }
+            // Validacion de resultados de Lecturas
+            if (datoGeneralLectura === 0) {
+              calcularLectura = 0;
+            } else {
+              calcularLectura = Math.round((datoLectura / datoGeneralLectura) * 100);
+            }
           })
         })
       }

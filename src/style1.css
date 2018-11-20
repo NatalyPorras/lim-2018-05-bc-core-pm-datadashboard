@@ -2,15 +2,23 @@
  .navbar {
    position:fixed;
    width: 100%;
-   background-color: #ffffff;
+   height: 8%;
+   background-color: #f0f0f0f0;
    z-index: 1000;
+   padding: 0 .4em;
+ }
+
+ .navbar-toggler{
+   padding: .25rem;
+ }
+ .navbar-toggler-icon{
+   height: 1.2em;
  }
  .main{
   background-image: url(./imagenes/mapa.png);
   height: 100vh;
   background-size: cover
 }
-
 
 .sidebar-nav li a:hover {
   text-decoration: none;
@@ -20,73 +28,69 @@
 }
  .navbar-brand>img{
    height: 30px;
-   margin: 3% auto;
+   width: 10em;
  }
  .navbar-brand{
-   padding: 1px 2px;
-
+   text-align: center;
+   margin: 0 1em;
+   padding: 0
   }
- /* .navbar-toggle {
-  position: relative;
-  float: left;
-  padding: 9px 10px;
- margin: 1.5% 2%;
-} */
+.btn-menu{
+  display: inline-block;
+}
  #wrapper {
+   padding-top: 3em;
     padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     overflow: hidden;
  }
  
- #wrapper.toggled {
+ /* #wrapper.toggled {
     padding-left: 250px;
-    /* overflow: hidden; */
+    /* overflow: hidden; 
  }
- 
+  */
  #sidebar-wrapper {
-   
-  top: 10%;
-    z-index: 1000;
-    position: absolute;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #000;
-    transition: all 0.5s ease-in;
-    display: none;
+  top: 8%;
+  z-index: 1000;
+  position: absolute;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #000;
+  transition: all 0.5s ease-in;
+  display: none;
  }
  .fa-sign-out-alt{
   color : rgb(230,0,126)
  }
- #wrapper.toggled #sidebar-wrapper {
+ /* #wrapper.toggled #sidebar-wrapper {
     width: 250px;
  }
- 
+  */
  #page-content-wrapper {
     padding: 15px;
     width: 100%;
     display: none;
     width: 100%;
-    margin-top:20%;
     overflow-x: hidden;
  }
  
- .xyz {
+ /* .xyz {
     min-width: 360px;
- }
+ } */
  
- #wrapper.toggled #page-content-wrapper {
+ /* #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0px;
- }
+ } */
  
  .fixed-brand {
-    width: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around
  }
  /* Sidebar Styles */
  
@@ -114,8 +118,8 @@
  
  .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.2);
+    color: #999999;
+    background: rgba(255,229,33);
     border-left: white 2px solid;
  }
  
@@ -151,12 +155,11 @@
 
 }
 .logo-signOut{
-  display: inline-block;
-  position: absolute;
-  right: 2%;
-  top: 0;
-  margin: 0.5% auto;
-  font-size: 30px;
+  font-size: 20px;
+  margin: 0 .3em;
+}
+.logo-signOut a{
+  vertical-align: center;
 }
 .main{
   
@@ -206,26 +209,24 @@
   font-size: 20px;
   font-weight: 100;
 }
+.search {
+  padding: 1% 0
+}
 
 .optionsSelect {
-  justify-content: space-around;
   margin-bottom: 10px;
 }
-.search{
-display: block;
-margin: 0.5%;
-}
+
 .searchStyle{
   display: inline-block;
-  width: 70%;
-  margin-left:10px;
-  height: 30px;
-  padding: 0 0 0 15px;
+  width: 75%;
+  margin-left:3px;
+  height: 27px;
+  padding: 0 0 0 5px;
   font-size: 12px;
 }
 .selectsDetails{
   text-align: center;
-  margin: 1%;
 }
 .form-control-sm{
   width: 80%;
@@ -235,7 +236,8 @@ margin: 0.5%;
   padding: 0.5%;
 }
 .col-form-label{
-  font-size: 14px;
+  font-size: 13px;
+  margin-left: 5%;
 }
 .form-check-label{
   font-size: 12px;
@@ -259,28 +261,82 @@ margin: 0.5%;
   display: none;
   padding: 15px;
   width: 100%;
-  margin-top:15%;
 } 
+#cohortSelect h2{
+  font-size : 0.85rem;
+  margin: 5% 0;
+}
 .card{
   text-align: center;
 }
-.card img{
-  width: 30%;
+.card h5{
+  font-size: 0.95rem;
+  margin: 1% 0
 }
+.card-body{
+  padding: 0.5rem
+}
+.card img{
+  width: 37%;
+  height: 100px;
+  margin: 5% auto
+}
+.cardTotalData{
+  display: flex;
+}
+.partTotal{
+  width: 55%;
+}
+.divProgress{
+  margin-bottom: 0.3rem;
+}
+.divProgress h6{
+  font-size: 0.7rem;
+  margin-bottom:0.2rem;
+  margin-left: 5%;
+  text-align: left
+}
+.showProgress{
+  display: flex;
+}
+.showProgress h4{
+  font-size: 0.6rem
+}
+.progress{
+  width: 100%;
+  height: 0.6rem;
+  margin-left: 2%
+}
+@media (min-width: 576px){
+  .col-sm-4 {
+    padding: 2px;
+}
+}
+
  @media(min-width:768px) {
     #wrapper {
-       padding-left: 250px;
+       padding-top: 3.8em
     }
     .fixed-brand {
-       width: 250px;
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
     }
-    #wrapper.toggled {
-       padding-left: 0;
+    .navbar-toggler{
+      font-size: 1.7em;
+    }
+    .navbar-toggler-icon{
+      height: 1em;
+    }
+    .navbar-brand>img{
+      height: 40px;
+      width: 16em;
     }
     #sidebar-wrapper {
        width: 250px;
        display: block;
        position: fixed;
+       top: 10.5%;
     }
     #wrapper.toggled #sidebar-wrapper {
        width: 250px;
@@ -297,10 +353,46 @@ margin: 0.5%;
     }
     .navbar{
       border-radius: 0;
+      height: 60px;
       border-bottom: 1px solid #c7c7c7;
       box-shadow: 10px 5px 5px #c7c7c7;
     }
+    .logo-signOut{
+      font-size: 30px;
+      right: 2%;
+    }
+    #page-content-wrapper .btn {
+      font-size: 14px;
+      width: 90%;
+  }
+  .optionsSelect{
+    display: flex;
+    justify-content: space-around
+  }
+  .search, .selectsDetails{
+    width: 50%;
+  }
 
+  .selectsDetails{
+    padding: 1.5%;
+  }
+  .searchStyle{
+    width: 65%;
+  }
+  .col-form-label{
+    font-size: 17px;
+  }
+  .form-control-sm{
+    font-size: 14px;
+    height: 30px;
+  }
+  .form-check-label{
+    font-size: 14px;
+  }
+#cohortSelect h2 {
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
  }
 
 
@@ -308,20 +400,29 @@ margin: 0.5%;
     #sidebar-wrapper {
       display: block !important;
       position: fixed;
+      top: 3.8em
     }
     .main{
       background-image: url(./imagenes/mapa.png);
       padding-left: 15px;
+      width: 100vw;
       height: 100vh;
       background-repeat: no-repeat;
       background-size: cover;
-      margin-top:5%;
+    }
+
+    .navbar-brand{
+      width: 20%;
+      margin: 0 .5em;
+     }
+
+    .navbar-brand>img{
+      height: 40px;
     }
     #page-content-wrapper {
       display: none;
       padding: 15px;
       width: 100%;
-      margin-top:5%;
    }
     .contentTotalDatos{
       display: flex;
@@ -418,7 +519,6 @@ margin: 0.5%;
       display: none;
       padding: 15px;
       width: 100%;
-      margin-top:5%;
     } 
     .card{
       text-align: center;
@@ -452,5 +552,9 @@ margin: 0.5%;
     .divProgress h6{
       font-size: 0.7rem
 
+    }
+    #cohortSelect h2{
+      font-size : 1.3rem;
+      margin: 2% 0;
     }
   }

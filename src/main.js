@@ -177,31 +177,36 @@ const getUsersCount = (id) =>{
   
     let usersWithStats = processCohortData(options);
    
-    paintingUsers(usersWithStats);
+    paintingUsers(id, usersWithStats);
+
+    searchText.addEventListener("keyup", () => {
+        options.search = searchText.value;
+        let filterUsersWithStats = processCohortData(options);
+        paintingUsers(id,filterUsersWithStats);
+      });
+      orderBy.addEventListener("change", () => {
+        options.orderBy = orderBy.value;
+        let sortUsersWithStats = processCohortData(options);
+        paintingUsers(id,sortUsersWithStats);
+      });
+      ascendente.addEventListener("click", () => {
+        options.orderDirection = "Ascendente";
+        let sortUsersWithStats = processCohortData(options);
+        paintingUsers(id,sortUsersWithStats);
+      });
+      descendente.addEventListener("click", () => {
+        options.orderDirection = "Descendente";
+        let sortUsersWithStats = processCohortData(options);
+        paintingUsers(id,sortUsersWithStats);
+      });
 }
-searchText.addEventListener("keyup", () => {
-    options.search = searchText.value;
-    let filterUsersWithStats = processCohortData(options);
-    paintingUsers(filterUsersWithStats);
-  });
-  orderBy.addEventListener("change", () => {
-    options.orderBy = orderBy.value;
-    let sortUsersWithStats = processCohortData(options);
-    paintingUsers(sortUsersWithStats);
-  });
-  ascendente.addEventListener("click", () => {
-    options.orderDirection = "Ascendente";
-    let sortUsersWithStats = processCohortData(options);
-    paintingUsers(sortUsersWithStats);
-  });
-  descendente.addEventListener("click", () => {
-    options.orderDirection = "Descendente";
-    let sortUsersWithStats = processCohortData(options);
-    paintingUsers(sortUsersWithStats);
-  });
-const paintingUsers = (users) =>{
+
+const paintingUsers = (id,users) =>{
     cohortSelect.innerHTML = ""
+    let titleCOHORT = document.createElement("h2");
     let cardGroup = document.createElement("div");
+    titleCOHORT.textContent = id 
+    
     cardGroup.className = "card-columns";
     users.map(user =>{
         let card = document.createElement("div");
@@ -281,7 +286,7 @@ const paintingUsers = (users) =>{
         progressBar3.setAttribute("aria-valuemin","0")
         progressBar3.setAttribute("aria-valuemax","100")
 
-        titleProgress3.textContent = "Lecturas"
+        titleProgress3.textContent = "Quizzes"
 
         card.className = "card";
         cardBody.className = "card-body"
@@ -325,5 +330,7 @@ const paintingUsers = (users) =>{
         cardGroup.appendChild(card);
 
     })
+    cohortSelect.appendChild(titleCOHORT);
+
     cohortSelect.appendChild(cardGroup)
 }

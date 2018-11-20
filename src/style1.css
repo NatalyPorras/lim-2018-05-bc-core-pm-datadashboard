@@ -397,6 +397,9 @@
 
 
  @media only screen and (min-width: 992px) {
+   #wrapper{
+     padding-left: 250px;
+   }
     #sidebar-wrapper {
       display: block !important;
       position: fixed;
